@@ -1,0 +1,9 @@
+{
+  "git.addGBlameToVirtualText": true,
+  "python.formatting.provider": "yapf",
+  "python.formatting.yapfArgs": ["--style", "google"],
+  "python.linting.pylintArgs": [
+    "--errors-only",
+    "--generated-members=numpy.* ,torch.* ,cv2.* , cv.*"
+  ]
+}
