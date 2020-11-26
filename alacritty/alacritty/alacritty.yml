@@ -172,7 +172,100 @@
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
-# Colors (Tomorrow Night)
+###################### Color Theme
+# # Colors (Material Theme)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x1e282d'
+#     foreground: '0xc4c7d1'
+#
+#   # Normal colors
+#   normal:
+#     black:   '0x666666'
+#     red:     '0xeb606b'
+#     green:   '0xc3e88d'
+#     yellow:  '0xf7eb95'
+#     blue:    '0x80cbc4'
+#     magenta: '0xff2f90'
+#     cyan:    '0xaeddff'
+#     white:   '0xffffff'
+#
+#   # Bright colors
+#   bright:
+#     black:   '0xff262b'
+#     red:     '0xeb606b'
+#     green:   '0xc3e88d'
+#     yellow:  '0xf7eb95'
+#     blue:    '0x7dc6bf'
+#     magenta: '0x6c71c4'
+#     cyan:    '0x35434d'
+#     white:   '0xffffff'
+
+# # Cyber Punk Neon
+# # Source: https://github.com/Roboron3042/Cyberpunk-Neon
+# colors:
+#   # Default colors
+#   primary:
+#     background: "0x000b1e"
+#     foreground: "0x0abdc6"
+#
+#   # Colors the cursor will use if `custom_cursor_colors` is true
+#   cursor:
+#     text:   "0x000b1e"
+#     cursor: "0x0abdc6"
+#
+#   # Normal colors
+#   normal:
+#     black:   "0x123e7c"
+#     red:     "0xff0000"
+#     green:   "0xd300c4"
+#     yellow:  "0xf57800"
+#     blue:    "0x123e7c"
+#     magenta: "0x711c91"
+#     cyan:    "0x0abdc6"
+#     white:   "0xd7d7d5"
+#
+#   # Bright colors
+#   bright:
+#     black:   "0x1c61c2"
+#     red:     "0xff0000"
+#     green:   "0xd300c4"
+#     yellow:  "0xf57800"
+#     blue:    "0x00ff00"
+#     magenta: "0x711c91"
+#     cyan:    "0x0abdc6"
+#     white:   "0xd7d7d5"
+
+# # Colors (One Dark)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x1e2127'
+#     foreground: '0xabb2bf'
+#     # foreground: '0xff66cc'
+#
+#   # Normal colors
+#   normal:
+#     black:   '0x1e2127'
+#     red:     '0xe06c75'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0xabb2bf'
+#
+#   # Bright colors
+#   bright:
+#     black:   '0x5c6370'
+#     red:     '0xe06c75'
+#     green:   '0x98c379'
+#     yellow:  '0xd19a66'
+#     blue:    '0x61afef'
+#     magenta: '0xc678dd'
+#     cyan:    '0x56b6c2'
+#     white:   '0xffffff'
 #colors:
   # Default colors
   #primary:
