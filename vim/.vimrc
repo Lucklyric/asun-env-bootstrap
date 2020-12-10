@@ -398,7 +398,7 @@ let g:coc_global_extensions = ['coc-json',
             \'https://github.com/SvenBecker/vscode-pytorch', 
             \'https://github.com/xabikos/vscode-react', 
             \'coc-marketplace',
-            \'coc-json',
+            \'coc-tabnine',
             \]
 
 
