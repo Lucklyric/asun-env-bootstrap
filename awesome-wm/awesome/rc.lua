@@ -31,6 +31,7 @@ awful.util.spawn_with_shell("gnome-settings-daemon")
 
 -- widgets
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local docker_widget = require("awesome-wm-widgets.docker-widget.docker")
 
 
 -- Load Debian menu entries
@@ -250,6 +251,7 @@ local tasklist_buttons = gears.table.join(
                 s.mytasklist, -- Middle widget
                 { -- Right widgets
                     layout = wibox.layout.fixed.horizontal,
+                    docker_widget(),
                     cpu_widget({
                             width = 70,
                             step_width = 2,

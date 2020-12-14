@@ -67,8 +67,12 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
 
-" Python
+" DocString
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+Plug 'heavenshell/vim-jsdoc', { 
+  \ 'for': ['javascript', 'javascript.jsx','typescript'], 
+  \ 'do': 'make install'
+\}
 
 " - Front end
 " Plug 'posva/vim-vue'
