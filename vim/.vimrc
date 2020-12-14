@@ -43,7 +43,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tenfyzhong/CompleteParameter.vim'
 Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
-Plug 'Lucklyric/vim-header'
+" Plug 'Lucklyric/vim-header'
+Plug 'alpertuna/vim-header'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'severin-lemaignan/vim-minimap'
@@ -65,6 +66,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
+
+" Python
+Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 
 " - Front end
 " Plug 'posva/vim-vue'
@@ -227,6 +231,14 @@ let g:vimtex_view_general_viewer = 'evince'
 " Plugin Configuration
 "
 """"""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""  PytDocString
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:pydocstring_formatter = 'google'
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  Tagbar
