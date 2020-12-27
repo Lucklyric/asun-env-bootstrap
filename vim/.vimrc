@@ -35,6 +35,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Plug 'Valloric/YouCompleteMe'
@@ -85,7 +86,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
-
 
 " debuger
 Plug 'puremourning/vimspector'
@@ -418,12 +418,12 @@ let g:coc_global_extensions = ['coc-json',
             \'coc-prettier', 
             \'coc-snippets', 
             \'coc-yank', 
-            \'https://github.com/SvenBecker/vscode-pytorch', 
-            \'https://github.com/xabikos/vscode-react', 
             \'coc-marketplace',
             \'coc-tabnine',
+            \'coc-pairs',
+            \'https://github.com/SvenBecker/vscode-pytorch', 
+            \'https://github.com/xabikos/vscode-react'
             \]
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Coc Base Default from https://github.com/neoclide/coc.nvim
