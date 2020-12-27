@@ -44,6 +44,8 @@ Plug 'tenfyzhong/CompleteParameter.vim'
 Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
 " Plug 'Lucklyric/vim-header'
+" Plug 'frazrepo/vim-rainbow'
+Plug 'luochen1990/rainbow'
 Plug 'alpertuna/vim-header'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
@@ -235,6 +237,11 @@ let g:vimtex_view_general_viewer = 'evince'
 " Plugin Configuration
 "
 """"""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""  Vim-Rainbow
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:rainbow_active = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
