@@ -7,6 +7,7 @@
 " Hex ffa8fb
 "
 " Automatic reloading of .vimrc
+"
 set encoding=UTF-8
 autocmd! bufwritepost .vimrc source %
 set t_Co=256
@@ -24,6 +25,21 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 filetype plugin on
 " specify a directory for plugins
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Pre configuration
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" PloyGlot 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:polyglot_disabled = ['markdown']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Load plugin
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim diretomasiser/vim-code-darkctory names like 'plugin'
@@ -237,13 +253,7 @@ let g:vimtex_view_general_viewer = 'evince'
 " Plugin Configuration
 "
 """"""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" PloyGlot 
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:ployglot_disabled = ['markdown']
 
-let g:rainbow_active = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  Vim-Rainbow

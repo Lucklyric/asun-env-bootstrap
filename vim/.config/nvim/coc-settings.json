@@ -5,5 +5,8 @@
   "python.linting.pylintArgs": [
     "--errors-only",
     "--generated-members=numpy.* ,torch.* ,cv2.* , cv.*"
+  ],
+  "cSpell.userWords": [
+    "Ulti"
   ]
 }
