@@ -7,6 +7,22 @@
     "--generated-members=numpy.* ,torch.* ,cv2.* , cv.*"
   ],
   "cSpell.userWords": [
-    "Ulti"
+    "Glot",
+    "Raimondi",
+    "Ulti",
+    "Xinyao",
+    "asun",
+    "azvh",
+    "diretomasiser",
+    "filt",
+    "flazz",
+    "jiangmiao",
+    "lkab",
+    "ptsel",
+    "quobyte",
+    "rsync",
+    "tpope",
+    "ultisnips",
+    "vgeomatics"
   ]
 }
