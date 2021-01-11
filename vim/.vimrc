@@ -127,6 +127,7 @@ endif
 set shiftwidth=2
 set softtabstop=4
 set tabstop=4
+set scrolloff=8
 syntax on
 noremap <F3> :Autoformat<CR>
 let mapleader = ","
