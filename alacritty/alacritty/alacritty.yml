@@ -862,30 +862,60 @@ key_bindings:
   #log_level: Warn
   # Print all received window events.
   #print_events: false
+# colors:
+#   # Default colors
+#   primary:
+#     background: '#000000'
+#     foreground: '#f8f8f2'
+#
+#   # Normal colors
+#   normal:
+#     black: '#282a36'
+#     red: '#ff5555'
+#     green: '#50fa7b'
+#     yellow: '#f1fa8c'
+#     blue: '#caa9fa'
+#     magenta: '#ff79c6'
+#     cyan: '#8be9fd'
+#     white: '#bfbfbf'
+#
+#   # Bright colors
+#   bright:
+#     black: '#575b70'
+#     red: '#ff6e67'
+#     green: '#5af78e'
+#     yellow: '#f4f99d'
+#     blue: '#caa9fa'
+#     magenta: '#ff92d0'
+#     cyan: '#9aedfe'
+#     white: '#e6e6e6'
+
+#theme
+# Colors (iTerm 2 default theme)
 colors:
   # Default colors
   primary:
     background: '#000000'
-    foreground: '#f8f8f2'
+    foreground: '0xfffbf6'
 
   # Normal colors
   normal:
-    black: '#282a36'
-    red: '#ff5555'
-    green: '#50fa7b'
-    yellow: '#f1fa8c'
-    blue: '#caa9fa'
-    magenta: '#ff79c6'
-    cyan: '#8be9fd'
-    white: '#bfbfbf'
+    black:   '0x2e2e2e'
+    red:     '0xeb4129'
+    green:   '0xabe047'
+    yellow:  '0xf6c744'
+    blue:    '0x47a0f3'
+    magenta: '0x7b5cb0'
+    cyan:    '0x64dbed'
+    white:   '0xe5e9f0'
 
   # Bright colors
   bright:
-    black: '#575b70'
-    red: '#ff6e67'
-    green: '#5af78e'
-    yellow: '#f4f99d'
-    blue: '#caa9fa'
-    magenta: '#ff92d0'
-    cyan: '#9aedfe'
-    white: '#e6e6e6'
+    black:   '0x565656'
+    red:     '0xec5357'
+    green:   '0xc0e17d'
+    yellow:  '0xf9da6a'
+    blue:    '0x49a4f8'
+    magenta: '0xa47de9'
+    cyan:    '0x99faf2'
+    white:   '0xffffff'
