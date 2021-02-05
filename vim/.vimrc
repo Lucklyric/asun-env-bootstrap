@@ -139,6 +139,8 @@ set colorcolumn=80
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
+set splitbelow
+set splitright
 
 " CtrpP but with ag
 noremap <c-p> :Ag<CR>
