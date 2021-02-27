@@ -427,7 +427,8 @@ highlight MatchParen ctermbg=blue guibg=lightblue
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:coc_global_extensions = ['coc-json',
             \'coc-tsserver', 
-            \'coc-python', 
+            \'coc-pyright',
+            \'coc-jedi',
             \'coc-css', 
             \'coc-go', 
             \'coc-html', 
