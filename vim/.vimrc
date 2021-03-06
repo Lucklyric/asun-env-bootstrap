@@ -196,6 +196,8 @@ set noswapfile
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  Custom functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+" open vscode
+nmap <leader>vc :call system("code")<CR>
 
 " Toggle spell check
 let g:spell_is_close = 1
