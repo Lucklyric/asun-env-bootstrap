@@ -1,5 +1,6 @@
 {
   "git.addGBlameToVirtualText": true,
+  "python.analysis.typeCheckingMode": "off",
   "python.formatting.provider": "yapf",
   "python.formatting.yapfArgs": ["--style", "google"],
   "python.linting.pylintArgs": [
