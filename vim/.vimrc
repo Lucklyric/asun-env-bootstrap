@@ -104,7 +104,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
 " debuger
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 " initialize plugin system
 call plug#end()
 filetype plugin indent on    " required
@@ -185,6 +185,7 @@ set expandtab
 set nu
 set cursorline
 set cursorcolumn
+set conceallevel=2 
 
 
 " Disable stupid backup
@@ -197,7 +198,7 @@ set noswapfile
 """  Custom functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " open vscode
-nmap <leader>vc :call system("code")<CR>
+nmap <leader>vc :call system("code .")<CR>
 
 " Toggle spell check
 let g:spell_is_close = 1
@@ -258,6 +259,11 @@ let g:vimtex_view_general_viewer = 'evince'
 " Plugin Configuration
 "
 """"""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""  indentLine
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indentLine_setConceal = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
