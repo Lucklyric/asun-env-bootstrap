@@ -86,6 +86,10 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
 
+" markdown
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
 " DocString
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
 Plug 'heavenshell/vim-jsdoc', { 
@@ -258,7 +262,13 @@ let g:vimtex_view_general_viewer = 'evince'
 """"""""""""""""""""""""
 " Plugin Configuration
 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" vim-markdown 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""
+let g:vim_markdown_conceal = 0
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  indentLine
