@@ -86,6 +86,9 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
 
+" better buffer delete management
+Plug 'Asheq/close-buffers.vim'
+
 " markdown
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -263,6 +266,11 @@ let g:vimtex_view_general_viewer = 'evince'
 " Plugin Configuration
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" close-buffers.vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <silent> Q     :Bdelete menu<CR>
+""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ tabular.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""
