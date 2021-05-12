@@ -111,7 +111,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
 " debuger
-" Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector'
 " initialize plugin system
 call plug#end()
 filetype plugin indent on    " required
@@ -237,6 +237,12 @@ augroup DetectIndent
    autocmd!
    autocmd BufReadPost *  DetectIndent
 augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" puremourning/vimspector
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
