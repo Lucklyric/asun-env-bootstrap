@@ -70,7 +70,6 @@ Plug 'severin-lemaignan/vim-minimap'
 Plug 'xolox/vim-colorscheme-switcher'
 Plug 'xolox/vim-misc'
 Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
@@ -85,6 +84,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
+" colorscheme
+Plug 'joshdick/onedark.vim'
+Plug 'tomasiser/vim-code-dark'
+Plug 'Lucklyric/palenight.vim'
 
 " better buffer delete management
 Plug 'Asheq/close-buffers.vim'
@@ -150,7 +153,7 @@ set splitbelow
 set splitright
 
 " CtrpP but with ag
-noremap <c-p> :Ag<CR>
+noremap <c-p> :Files<CR>
 
 " Better copy & paste
 set pastetoggle=<F2>
@@ -232,6 +235,11 @@ function! EnsureDirExists (dir)
         endif
     endif
 endfunction
+
+function! ShowSyntax()
+  echo synIDattr(synID(line("."), col("."), 1), "name")
+endfunction
+command ShowSyntax call ShowSyntax()
 
 augroup DetectIndent
    autocmd!
@@ -455,8 +463,10 @@ let g:airline_theme='fruit_punch'
 let g:airline#extensions#tabline#enabled = 1
 set background=dark
 colorscheme palenight
+" colorscheme onedark
+" let g:onedark_termcolors=256
 " colorscheme codedark
-" let g:palenight_terminal_italics=1
+let g:palenight_terminal_italics=1
 " let g:hybrid_transparent_background = 1
 if !has('gui_running')
   hi! Normal ctermbg=NONE guibg=NONE
