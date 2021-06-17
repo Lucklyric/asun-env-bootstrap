@@ -27,18 +27,14 @@ filetype plugin on
 " specify a directory for plugins
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Pre configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ PloyGlot 
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:polyglot_disabled = ['markdown']
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Load plugin
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -204,7 +200,6 @@ set nowritebackup
 set noswapfile
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """  Custom functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " open vscode
@@ -245,28 +240,29 @@ augroup DetectIndent
    autocmd!
    autocmd BufReadPost *  DetectIndent
 augroup END
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ puremourning/vimspector
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ which key 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader> :WhichKey ','<CR>
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  UndoTree
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 call EnsureDirExists($HOME . '/.vim/undodir')
 nnoremap <leader>ud :UndotreeToggle<cr>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  Latex Setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -274,17 +270,24 @@ let g:tex_flavor='latex'
 let g:Tex_MultipleCompileFormats='pdf,bib,pdf,pdf'
 let g:Tex_ViewRule_pdf = 'evince'
 let g:vimtex_view_general_viewer = 'evince'
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""
 " Plugin Configuration
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+""" startify
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:startify_change_to_dir = 0
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ close-buffers.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> Q     :Bdelete menu<CR>
-""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ tabular.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -295,46 +298,46 @@ if exists(":Tabularize")
       vmap <Leader>a: :Tabularize /:\zs<CR>
     endif
 """"""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ vim-markdown 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_conceal = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  indentLine
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_setConceal = 0
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  Vim-Rainbow
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rainbow_active = 1
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  PytDocString
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:pydocstring_formatter = 'google'
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  Tagbar
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>bb :BufExplorer<CR>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  Tagbar
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <leader>TT :TagbarToggle<CR>
 let g:tagbar_autofocus=1
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  Float Terminal VIM
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -346,9 +349,8 @@ nnoremap <s-t>h :FloatermNext<CR>
 tnoremap <s-t>l <C-\><C-n>:FloatermNext<CR>
 nnoremap <s-t>t :FloatermToggle<CR>
 tnoremap <s-t>t <C-\><C-n>:FloatermToggle<CR>
-
 nnoremap <s-t>f :FloatermNew fzf<CR>
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 ""YouCompleteMe configuration
 " noremap <leader>jd :YcmCompleter GoTo<CR>
@@ -367,7 +369,6 @@ nnoremap <s-t>f :FloatermNew fzf<CR>
 " highlight Pmenu ctermbg=black ctermfg=white
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ NERD Tree
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree configuration
@@ -377,8 +378,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | Startify | NERDTree |
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore=['\.pyc$', '\~$', 'node_modules'] "ignore files in
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ NERD Comment
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -399,6 +400,7 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ Parameter Complete
 " set cmdheight=2
@@ -409,8 +411,8 @@ let g:NERDToggleCheckAllLines = 1
 " imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
 " smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
 " imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Auto Header
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -419,15 +421,14 @@ let g:header_field_author_email = 'xinyao1@ualberta.ca'
 let g:header_auto_add_header = 0
 let g:header_field_modified_timestamp = 0
 let g:header_field_modified_by = 0
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Formater
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:formatdef_yapf = "'yapf --style=\"{based_on_style=google,spaces_before_comment=4,indent_width:4,column_limit:160}\"'"
 let g:formatters_python=['yapf']
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -438,11 +439,10 @@ syntax on
 autocmd Filetype * AnyFoldActivate
 let g:anyfold_fold_comments=1
 set foldlevel=0
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Snips
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-e>"
@@ -451,13 +451,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-
-" Latex setting
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Color Theme Setting
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:airline_theme='fruit_punch'
 let g:airline#extensions#tabline#enabled = 1
@@ -472,11 +469,10 @@ if !has('gui_running')
   hi! Normal ctermbg=NONE guibg=NONE
 endif
 highlight MatchParen ctermbg=blue guibg=lightblue
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ COC Configuration
-""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:coc_global_extensions = ['coc-json',
             \'coc-tsserver', 
@@ -690,3 +686,4 @@ let g:coc_snippet_prev = '<c-k>'
 
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
+""""""""""""""""""""""""""""""""""""""""""""""""""""
