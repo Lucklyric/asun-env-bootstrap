@@ -103,14 +103,23 @@ Plug 'heavenshell/vim-jsdoc', {
 " Plug 'posva/vim-vue'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'othree/yajs.vim'
+" Plug 'HerringtonDarkholme/yats.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --frozen-lockfile && yarn compile' }
 
 " debuger
 Plug 'puremourning/vimspector'
+
+" NVIM support only plugins
+if has('nvim')
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+  Plug 'nvim-treesitter/playground'
+  Plug 'akinsho/nvim-bufferline.lua'
+endif
+
 " initialize plugin system
 call plug#end()
 filetype plugin indent on    " required
@@ -272,9 +281,10 @@ let g:Tex_ViewRule_pdf = 'evince'
 let g:vimtex_view_general_viewer = 'evince'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configuration
-"
+" Native Vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ startify
@@ -687,3 +697,95 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has('nvim')
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Configuration
+" NVIM only 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" treesitter
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+      enable = true,              -- false will disable the whole extension
+  },
+  playground = {
+      enable = true,
+      disable = {},
+      updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+      persist_queries = false, -- Whether the query persists across vim sessions
+      keybindings = {
+      toggle_query_editor = 'o',
+      toggle_hl_groups = 'i',
+      toggle_injected_languages = 't',
+      toggle_anonymous_nodes = 'a',
+      toggle_language_display = 'I',
+      focus_language = 'f',
+      unfocus_language = 'F',
+      update = 'R',
+      goto_node = '<cr>',
+      show_help = '?',
+      },
+  },
+  indent = {
+    enable = true
+  }
+}
+EOF
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" nvim-bufferline
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 0
+lua <<EOF
+require'bufferline'.setup {
+  options = {
+    numbers = "both",
+    number_style = "superscript", -- buffer_id at index 1, ordinal at index 2
+    mappings = true,
+    close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
+    right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+    left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
+    middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
+    -- NOTE: this plugin is designed with this icon in mind,
+    -- and so changing this is NOT recommended, this is intended
+    -- as an escape hatch for people who cannot bear it for whatever reason
+    indicator_icon = '*',
+    buffer_close_icon = 'x',
+    modified_icon = '●',
+    close_icon = 'X',
+    left_trunc_marker = '<-',
+    right_trunc_marker = '->',
+    max_name_length = 18,
+    max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
+    tab_size = 18,
+    diagnostics = false,
+    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+      return "("..count..")"
+    end,
+    -- NOTE: this will be called a lot so don't do any heavy processing here
+    -- offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
+    show_buffer_icons = false, -- disable filetype icons for buffers
+    show_buffer_close_icons = true,
+    show_close_icon = true,
+    show_tab_indicators = true,
+    persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+    -- can also be a table containing 2 custom separators
+    -- [focused and unfocused]. eg: { '|', '|' }
+    separator_style = "thick",
+    enforce_regular_tabs = false,
+    always_show_bufferline = true,
+    sort_by =  'directory'
+    }
+}
+EOF
+nnoremap <silent>[b :BufferLineCycleNext<CR>
+nnoremap <silent>b] :BufferLineCyclePrev<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+endif
