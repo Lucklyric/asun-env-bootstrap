@@ -199,7 +199,7 @@ set shiftround
 set expandtab
 set nu
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 set conceallevel=2 
 
 
