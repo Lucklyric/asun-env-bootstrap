@@ -9,6 +9,7 @@
   ],
   "cSpell.userWords": [
     "Glot",
+    "IERC",
     "IFPS",
     "IPFS",
     "Initializable",
@@ -16,6 +17,7 @@
     "Raimondi",
     "Reentrancy",
     "SPDX",
+    "TWAP",
     "UUPS",
     "Ulti",
     "Xinyao",
@@ -27,9 +29,10 @@
     "ethersproject",
     "filt",
     "flazz",
-    "imsave",
     "funder",
+    "imsave",
     "jiangmiao",
+    "keccak",
     "lkab",
     "nomiclabs",
     "numpy",
@@ -43,6 +46,7 @@
     "tpope",
     "typechain",
     "ultisnips",
+    "uniswapv",
     "vgeomatics"
   ]
 }
