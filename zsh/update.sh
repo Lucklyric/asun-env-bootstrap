@@ -4,6 +4,8 @@ cd $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git pull
 cd $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git pull
+cd $HOME/.oh-my-zsh/custom/plugins/zsh-autocomplete
+git pull
 cd $CURRENTDIR
 
 
