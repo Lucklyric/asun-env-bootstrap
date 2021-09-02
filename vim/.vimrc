@@ -750,8 +750,6 @@ lua <<EOF
 require'bufferline'.setup {
   options = {
     numbers = "both",
-    number_style = "superscript", -- buffer_id at index 1, ordinal at index 2
-    mappings = true,
     close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
