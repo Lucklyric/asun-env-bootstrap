@@ -29,7 +29,7 @@ filetype plugin on
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Pre configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""" PloyGlot 
+""" PloyGlot
 let g:polyglot_disabled = ['markdown']
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -80,6 +80,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
+Plug 'axelf4/vim-strip-trailing-whitespace'
 
 " tagbar
 Plug 'liuchengxu/vista.vim'
@@ -98,8 +99,8 @@ Plug 'plasticboy/vim-markdown'
 
 " DocString
 Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
-Plug 'heavenshell/vim-jsdoc', { 
-  \ 'for': ['javascript', 'javascript.jsx','typescript'], 
+Plug 'heavenshell/vim-jsdoc', {
+  \ 'for': ['javascript', 'javascript.jsx','typescript'],
   \ 'do': 'make install'
 \}
 
@@ -142,7 +143,7 @@ set mouse+=a
 if !has('nvim')
     if has("mouse_sgr")
         set ttymouse=sgr
-    else 
+    else
         set ttymouse=xterm2
     endif
 endif
@@ -207,7 +208,7 @@ set expandtab
 set nu
 set cursorline
 " set cursorcolumn
-set conceallevel=2 
+set conceallevel=2
 
 
 " Disable stupid backup
@@ -301,7 +302,7 @@ nmap <Leader>vt :Vista!!<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""" which key 
+""" which key
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <leader> :WhichKey ','<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -351,7 +352,7 @@ if exists(":Tabularize")
 """"""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-""" vim-markdown 
+""" vim-markdown
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_conceal = 0
@@ -526,25 +527,25 @@ highlight MatchParen ctermbg=blue guibg=lightblue
 """ COC Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 let g:coc_global_extensions = ['coc-json',
-            \'coc-tsserver', 
+            \'coc-tsserver',
             \'coc-pyright',
             \'coc-jedi',
-            \'coc-css', 
-            \'coc-go', 
-            \'coc-html', 
-            \'coc-emmet', 
-            \'coc-prettier', 
-            \'coc-eslint', 
-            \'coc-java', 
+            \'coc-css',
+            \'coc-go',
+            \'coc-html',
+            \'coc-emmet',
+            \'coc-prettier',
+            \'coc-eslint',
+            \'coc-java',
             \'coc-git',
-            \'coc-prettier', 
-            \'coc-snippets', 
-            \'coc-yank', 
-            \'coc-tabnine', 
+            \'coc-prettier',
+            \'coc-snippets',
+            \'coc-yank',
+            \'coc-tabnine',
             \'coc-marketplace',
             \'coc-pairs',
             \'coc-spell-checker',
-            \'https://github.com/SvenBecker/vscode-pytorch', 
+            \'https://github.com/SvenBecker/vscode-pytorch',
             \'https://github.com/xabikos/vscode-react'
             \]
 
@@ -742,7 +743,7 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 if has('nvim')
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin Configuration
-" NVIM only 
+" NVIM only
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ treesitter
