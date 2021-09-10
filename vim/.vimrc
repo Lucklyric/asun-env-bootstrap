@@ -98,11 +98,12 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 " DocString
-Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
-Plug 'heavenshell/vim-jsdoc', {
-  \ 'for': ['javascript', 'javascript.jsx','typescript'],
-  \ 'do': 'make install'
-\}
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+" Plug 'heavenshell/vim-pydocstring', { 'do': 'make install' }
+" Plug 'heavenshell/vim-jsdoc', {
+"   \ 'for': ['javascript', 'javascript.jsx','typescript'],
+"   \ 'do': 'make install'
+" \}
 
 " - Front end
 " Plug 'posva/vim-vue'
@@ -117,6 +118,8 @@ Plug 'dsznajder/vscode-es7-javascript-react-snippets', { 'do': 'yarn install --f
 
 " debuger
 " Plug 'puremourning/vimspector'
+Plug 'vim-test/vim-test'
+Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 
 " NVIM support only plugins
 if has('nvim')
@@ -374,7 +377,13 @@ let g:rainbow_active = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  PytDocString
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-let g:pydocstring_formatter = 'google'
+" let g:pydocstring_formatter = 'google'
+" """"""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""  Doge
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:doge_doc_standard_python = 'google'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
