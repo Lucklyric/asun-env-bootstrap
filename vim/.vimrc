@@ -75,7 +75,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'pseewald/vim-anyfold'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
-Plug 'roryokane/detectindent'
+Plug 'lucklyric/detectindent'
 Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
