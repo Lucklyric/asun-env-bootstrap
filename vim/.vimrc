@@ -89,6 +89,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'tomasiser/vim-code-dark'
 Plug 'Lucklyric/palenight.vim'
+Plug 'Cian911/vim-cadence'
 
 " better buffer delete management
 Plug 'Asheq/close-buffers.vim'
@@ -554,6 +555,7 @@ let g:coc_global_extensions = ['coc-json',
             \'coc-marketplace',
             \'coc-pairs',
             \'coc-spell-checker',
+            \'coc-cadence',
             \'https://github.com/SvenBecker/vscode-pytorch',
             \'https://github.com/xabikos/vscode-react'
             \]
