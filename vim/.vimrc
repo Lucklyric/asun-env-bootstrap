@@ -75,7 +75,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'pseewald/vim-anyfold'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
-Plug 'lucklyric/detectindent'
+" Plug 'lucklyric/detectindent'
+Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
@@ -257,10 +258,10 @@ function! ShowSyntax()
 endfunction
 command ShowSyntax call ShowSyntax()
 
-augroup DetectIndent
-   autocmd!
-   autocmd BufReadPost *  DetectIndent
-augroup END
+" augroup DetectIndent
+"    autocmd!
+"    autocmd BufReadPost *  DetectIndent
+" augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -556,6 +557,8 @@ let g:coc_global_extensions = ['coc-json',
             \'coc-pairs',
             \'coc-spell-checker',
             \'coc-cadence',
+            \'coc-yaml',
+            \'coc-docker',
             \'https://github.com/SvenBecker/vscode-pytorch',
             \'https://github.com/xabikos/vscode-react'
             \]
