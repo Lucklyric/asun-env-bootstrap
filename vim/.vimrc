@@ -72,7 +72,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'voldikss/vim-floaterm'
 Plug 'vim-scripts/bufexplorer.zip'
 Plug 'Yggdroot/indentLine'
-Plug 'pseewald/vim-anyfold'
+" Plug 'pseewald/vim-anyfold'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
 " Plug 'lucklyric/detectindent'
@@ -81,7 +81,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
-Plug 'axelf4/vim-strip-trailing-whitespace'
+" Plug 'axelf4/vim-strip-trailing-whitespace'
 
 " tagbar
 Plug 'liuchengxu/vista.vim'
@@ -179,10 +179,10 @@ noremap  <leader><c-y> "+y
 noremap  <leader><c-p> "+p
 
 " Fold related
-set foldmethod=indent
-set foldnestmax=10
+" set foldmethod=indent
+" set foldnestmax=10
 set nofoldenable
-set foldlevel=2
+" set foldlevel=2
 
 " Window movement
 map <c-j> <c-w>j
@@ -497,11 +497,11 @@ let g:formatters_python=['yapf']
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Any-Fold
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-filetype plugin indent on
-syntax on
-autocmd Filetype * AnyFoldActivate
-let g:anyfold_fold_comments=1
-set foldlevel=0
+" filetype plugin indent on
+" syntax on
+" autocmd Filetype * AnyFoldActivate
+" let g:anyfold_fold_comments=2
+" set foldlevel=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
