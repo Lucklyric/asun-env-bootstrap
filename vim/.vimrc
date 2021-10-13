@@ -75,8 +75,8 @@ Plug 'Yggdroot/indentLine'
 " Plug 'pseewald/vim-anyfold'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-startify'
-" Plug 'lucklyric/detectindent'
 Plug 'tpope/vim-sleuth'
+Plug 'lucklyric/detectindent'
 Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
@@ -175,8 +175,8 @@ noremap <c-p> :Files<CR>
 
 " Better copy & paste
 set pastetoggle=<F2>
-noremap  <leader><c-y> "+y
-noremap  <leader><c-p> "+p
+noremap  <leader><c-c> "+y
+noremap  <leader><c-v> "+p
 
 " Fold related
 " set foldmethod=indent
@@ -497,11 +497,11 @@ let g:formatters_python=['yapf']
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ Any-Fold
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-" filetype plugin indent on
-" syntax on
+filetype plugin indent on
+syntax on
 " autocmd Filetype * AnyFoldActivate
 " let g:anyfold_fold_comments=2
-" set foldlevel=0
+set foldlevel=0
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
