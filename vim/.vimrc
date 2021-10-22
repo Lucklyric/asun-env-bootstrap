@@ -81,7 +81,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'liuchengxu/vim-which-key'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'sheerun/vim-polyglot'
-" Plug 'axelf4/vim-strip-trailing-whitespace'
+Plug 'axelf4/vim-strip-trailing-whitespace'
 
 " tagbar
 Plug 'liuchengxu/vista.vim'
@@ -175,8 +175,8 @@ noremap <c-p> :Files<CR>
 
 " Better copy & paste
 set pastetoggle=<F2>
-noremap  <leader><c-c> "+y
-noremap  <leader><c-v> "+p
+noremap  <leader><c-y> "+y
+noremap  <leader><c-p> "+p
 
 " Fold related
 " set foldmethod=indent
@@ -258,6 +258,7 @@ function! ShowSyntax()
 endfunction
 command ShowSyntax call ShowSyntax()
 
+autocmd BufWritePre * StripTrailingWhitespace
 " augroup DetectIndent
 "    autocmd!
 "    autocmd BufReadPost *  DetectIndent
