@@ -538,6 +538,7 @@ highlight MatchParen ctermbg=blue guibg=lightblue
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """ COC Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <F2> <Plug>(coc-codelens-action)
 let g:coc_global_extensions = ['coc-json',
             \'coc-tsserver',
             \'coc-pyright',
