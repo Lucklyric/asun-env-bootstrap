@@ -54,7 +54,7 @@ Plug 'honza/vim-snippets'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tenfyzhong/CompleteParameter.vim'
-Plug 'vim-latex/vim-latex'
+" Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
 " Plug 'Lucklyric/vim-header'
 " Plug 'frazrepo/vim-rainbow'
@@ -131,9 +131,10 @@ if has('nvim')
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'github/copilot.vim'
 endif
 
-" initialize plugin system
+" Intelligence
 call plug#end()
 filetype plugin indent on    " required
 
@@ -323,10 +324,10 @@ nnoremap <leader>ud :UndotreeToggle<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 """  Latex Setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""
-let g:tex_flavor='latex'
-let g:Tex_MultipleCompileFormats='pdf,bib,pdf,pdf'
-let g:Tex_ViewRule_pdf = 'evince'
-let g:vimtex_view_general_viewer = 'evince'
+" let g:tex_flavor='latex'
+" let g:Tex_MultipleCompileFormats='pdf,bib,pdf,pdf'
+" let g:Tex_ViewRule_pdf = 'evince'
+" let g:vimtex_view_general_viewer = 'evince'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 
