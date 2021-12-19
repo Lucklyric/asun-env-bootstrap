@@ -59,6 +59,8 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "easymotion/vim-easymotion" -- Easymotion
+  -- better buffer delete management
+  use 'Asheq/close-buffers.vim'
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -78,7 +80,8 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
-  use 'SirVer/ultisnips'
+  use 'honza/vim-snippets'
+  -- use 'SirVer/ultisnips'
   use 'quangnguyen30192/cmp-nvim-ultisnips'
   use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
@@ -89,7 +92,7 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use {"neoclide/coc.nvim", branch = "release"}
-  use "github/copilot.vim"
+  -- use "github/copilot.vim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"

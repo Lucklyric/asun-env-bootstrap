@@ -77,7 +77,7 @@ cmp.setup {
       elseif check_backspace() then
         fallback()
       else
-        fallback()
+       fallback()
       end
     end, {
       "i",
