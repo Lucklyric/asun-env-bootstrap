@@ -52,6 +52,7 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "voldikss/vim-floaterm"
+  use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -59,10 +60,10 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "easymotion/vim-easymotion" -- Easymotion
-  use "axelf4/vim-strip-trailing-whitespace"
+  -- use "axelf4/vim-strip-trailing-whitespace"
 
   -- better buffer delete management
-  use 'Asheq/close-buffers.vim'
+  -- use 'Asheq/close-buffers.vim'
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -94,7 +95,7 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use {"neoclide/coc.nvim", branch = "release"}
-  -- use "github/copilot.vim"
+  use "github/copilot.vim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
