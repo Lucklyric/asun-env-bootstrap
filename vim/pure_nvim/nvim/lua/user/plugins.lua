@@ -79,13 +79,13 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-  use 'hrsh7th/cmp-vsnip'
+  -- use "L3MON4D3/LuaSnip" --snippet engine
+  -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  -- use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
   use 'honza/vim-snippets'
   -- use 'SirVer/ultisnips'
-  use 'quangnguyen30192/cmp-nvim-ultisnips'
+  -- use 'quangnguyen30192/cmp-nvim-ultisnips'
   use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
 
