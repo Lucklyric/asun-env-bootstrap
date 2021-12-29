@@ -105,6 +105,12 @@ local mappings = {
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 
+  C = {
+    name = "COC",
+    a = { "<cmd>CocAction<cr>", "Action" },
+    q = { "<cmd>CocQuickfix<cr>", "Quickfix" },
+  },
+
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },

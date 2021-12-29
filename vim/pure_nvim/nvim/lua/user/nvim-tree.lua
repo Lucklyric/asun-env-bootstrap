@@ -1,5 +1,5 @@
 vim.cmd [[
-  let g:nvim_tree_disable_window_picker = 1 "0 by default, will disable the window picker.
+  let g:nvim_tree_disable_window_picker = 0 "0 by default, will disable the window picker.
 ]]
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
@@ -48,9 +48,9 @@ nvim_tree.setup {
   auto_close = true,
   open_on_tab = false,
   hijack_cursor = false,
-  update_cwd = true,
+  update_cwd = false,
   update_to_buf_dir = {
-    enable = true,
+    enable = false,
     auto_open = true,
   },
   diagnostics = {
@@ -103,7 +103,6 @@ nvim_tree.setup {
   },
   quit_on_open = 0,
   git_hl = 1,
-  disable_window_picker = 0,
   root_folder_modifier = ":t",
   show_icons = {
     git = 1,

@@ -16,7 +16,7 @@ vim.cmd [[
   augroup _markdown
     autocmd!
     autocmd FileType markdown setlocal wrap
-    autocmd FileType markdown setlocal spell
+    " autocmd FileType markdown setlocal spell
   augroup end
 
   augroup _auto_resize

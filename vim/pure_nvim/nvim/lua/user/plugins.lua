@@ -70,6 +70,11 @@ return packer.startup(function(use)
   -- use "lunarvim/darkplus.nvim"
   use "lucklyric/palenight.vim"
 
+  -- Markdown
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
+  use "plasticboy/vim-markdown"
+  use "lervag/vimtex"
+
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -112,6 +117,7 @@ return packer.startup(function(use)
 
   -- Smart Contract
   use "tomlion/vim-solidity"
+  use "Cian911/vim-cadence"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
