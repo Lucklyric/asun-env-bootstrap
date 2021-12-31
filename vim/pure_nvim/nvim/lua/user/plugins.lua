@@ -73,6 +73,7 @@ return packer.startup(function(use)
   -- Markdown
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
   use "plasticboy/vim-markdown"
+  use 'mzlogin/vim-markdown-toc'
   use "lervag/vimtex"
 
   -- cmp plugins
