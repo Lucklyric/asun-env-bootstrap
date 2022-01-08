@@ -114,7 +114,7 @@ return packer.startup(function(use)
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
+  -- use "lewis6991/gitsigns.nvim"
 
   -- Smart Contract
   use "tomlion/vim-solidity"
