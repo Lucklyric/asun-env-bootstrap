@@ -60,6 +60,7 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "easymotion/vim-easymotion" -- Easymotion
+  use "kkoomen/vim-doge"
   -- use "axelf4/vim-strip-trailing-whitespace"
 
   -- better buffer delete management
