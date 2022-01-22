@@ -52,7 +52,7 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "voldikss/vim-floaterm"
-  use "akinsho/toggleterm.nvim"
+  -- use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -101,8 +101,12 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "github/copilot.vim"
+  -- use "github/copilot.vim"
+  use "Lucklyric/copilot.vim"
   use {"neoclide/coc.nvim", branch = "release"}
+
+  -- lint
+  use "wfleming/vim-codeclimate"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
