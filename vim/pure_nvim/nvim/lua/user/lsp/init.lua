@@ -1,4 +1,4 @@
--- !! Now I use coc.nvim to handle lsp
+-- !! now i use coc.nvim to handle lsp
 
 -- local status_ok, _ = pcall(require, "lspconfig")
 -- if not status_ok then

@@ -60,7 +60,7 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use "easymotion/vim-easymotion" -- Easymotion
-  use "kkoomen/vim-doge"
+  use { 'kkoomen/vim-doge', run = function() vim.fn['doge#install']() end }
   -- use "axelf4/vim-strip-trailing-whitespace"
 
   -- better buffer delete management
@@ -72,10 +72,10 @@ return packer.startup(function(use)
   use "lucklyric/palenight.vim"
 
   -- Markdown
+  use "lervag/vimtex"
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
   use "plasticboy/vim-markdown"
   use 'mzlogin/vim-markdown-toc'
-  use "lervag/vimtex"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -98,11 +98,11 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  -- use "github/copilot.vim"
-  use "Lucklyric/copilot.vim"
+  use "github/copilot.vim"
+  -- use "Lucklyric/copilot.vim"
   use {"neoclide/coc.nvim", branch = "release"}
 
   -- lint
