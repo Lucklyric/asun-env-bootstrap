@@ -49,7 +49,8 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  -- use "moll/vim-bbye"
+  use "Asheq/close-buffers.vim"
   use "nvim-lualine/lualine.nvim"
   use "voldikss/vim-floaterm"
   -- use "akinsho/toggleterm.nvim"
@@ -70,6 +71,8 @@ return packer.startup(function(use)
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   -- use "lunarvim/darkplus.nvim"
   use "lucklyric/palenight.vim"
+  use "sheerun/vim-polyglot"
+
 
   -- Markdown
   use "lervag/vimtex"
