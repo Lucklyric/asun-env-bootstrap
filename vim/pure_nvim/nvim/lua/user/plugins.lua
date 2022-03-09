@@ -76,7 +76,8 @@ return packer.startup(function(use)
 
   -- Markdown
   use "lervag/vimtex"
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
+  -- use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
+  use {'lucklyric/markdown-preview.nvim', run = 'cd app && yarn install'}
   use "plasticboy/vim-markdown"
   use 'mzlogin/vim-markdown-toc'
 
@@ -120,6 +121,10 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
+
+  -- Test
+  use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
+
 
   -- Git
   -- use "lewis6991/gitsigns.nvim"

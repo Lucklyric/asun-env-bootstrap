@@ -1,6 +1,3 @@
-vim.cmd [[
-  let g:nvim_tree_disable_window_picker = 0 "0 by default, will disable the window picker.
-]]
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_icons = {
@@ -40,6 +37,7 @@ nvim_tree.setup {
   disable_netrw = true,
   hijack_netrw = true,
   open_on_setup = false,
+  nvim_tree_disable_window_picker = false,
   ignore_ft_on_setup = {
     "startify",
     "dashboard",
