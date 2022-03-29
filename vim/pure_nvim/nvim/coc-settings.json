@@ -1,5 +1,6 @@
 {
   "codeLens.enable": true,
+  "java.maxConcurrentBuilds": 5,
   "git.addGBlameToVirtualText": true,
   "python.analysis.typeCheckingMode": "off",
   "python.formatting.provider": "yapf",

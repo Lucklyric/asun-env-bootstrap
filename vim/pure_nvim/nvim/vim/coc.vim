@@ -217,3 +217,12 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+" function! s:enable_coc_for_type()
+"   let l:filesuffix_whitelist = []
+"
+" 	if index(l:filesuffix_whitelist, expand('%:e')) == -1
+" 		let b:coc_enabled = 0
+" 	endif
+" endfunction
+" autocmd BufRead,BufNewFile * call s:enable_coc_for_type()
