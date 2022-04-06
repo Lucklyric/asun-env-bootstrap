@@ -107,7 +107,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "github/copilot.vim"
   -- use "Lucklyric/copilot.vim"
-  use {"neoclide/coc.nvim", branch = "release"}
+  use {"neoclide/coc.nvim", branch = "release", config = function() require "user.coc" end }
 
   -- lint
   use "wfleming/vim-codeclimate"

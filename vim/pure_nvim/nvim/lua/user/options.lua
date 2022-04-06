@@ -48,3 +48,12 @@ vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 vim.cmd [[set foldlevel=0]]
 vim.cmd [[set nofoldenable]]
+
+vim.cmd [[
+  fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+  endfun
+  command! TrimWhitespace call TrimWhitespace()
+]]
