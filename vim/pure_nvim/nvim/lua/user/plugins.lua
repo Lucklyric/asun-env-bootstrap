@@ -97,7 +97,7 @@ return packer.startup(function(use)
   use 'honza/vim-snippets'
   -- use 'SirVer/ultisnips'
   -- use 'quangnguyen30192/cmp-nvim-ultisnips'
-  use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
+  -- use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
 
   -- LSP
