@@ -88,5 +88,7 @@
     "vim",
     "yaml",
     "yml"
-  ]
+  ],
+  "coc.source.OmniSharp.enable": true,
+  "coc.source.OmniSharp.triggerCharacters": "."
 }

@@ -133,6 +133,9 @@ return packer.startup(function(use)
   use "tomlion/vim-solidity"
   use "Cian911/vim-cadence"
 
+  --- Unity
+  use "OmniSharp/omnisharp-vim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
