@@ -90,5 +90,5 @@
     "yml"
   ],
   "coc.source.OmniSharp.enable": true,
-  "coc.source.OmniSharp.triggerCharacters": "."
+  "coc.source.OmniSharp.shortcut": "."
 }

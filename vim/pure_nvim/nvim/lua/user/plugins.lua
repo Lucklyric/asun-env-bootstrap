@@ -77,7 +77,7 @@ return packer.startup(function(use)
   -- Markdown
   use "lervag/vimtex"
   -- use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install'}
-  use {'lucklyric/markdown-preview.nvim', run = 'cd app && yarn install'}
+  use { 'lucklyric/markdown-preview.nvim', run = 'cd app && yarn install' }
   use "plasticboy/vim-markdown"
   use 'mzlogin/vim-markdown-toc'
 
@@ -90,11 +90,11 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
 
   -- snippets
-  -- use "L3MON4D3/LuaSnip" --snippet engine
-  -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use "L3MON4D3/LuaSnip" --snippet engine
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
   -- use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  use 'honza/vim-snippets'
+  -- use 'hrsh7th/vim-vsnip'
+  -- use 'honza/vim-snippets'
   -- use 'SirVer/ultisnips'
   -- use 'quangnguyen30192/cmp-nvim-ultisnips'
   -- use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
@@ -107,7 +107,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "github/copilot.vim"
   -- use "Lucklyric/copilot.vim"
-  use {"neoclide/coc.nvim", branch = "release", config = function() require "user.coc" end }
+  -- use {"neoclide/coc.nvim", branch = "release", config = function() require "user.coc" end }
 
   -- lint
   use "wfleming/vim-codeclimate"
@@ -123,7 +123,7 @@ return packer.startup(function(use)
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Test
-  use { "rcarriga/vim-ultest", requires = {"vim-test/vim-test"}, run = ":UpdateRemotePlugins" }
+  use { "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" }
 
 
   -- Git
@@ -134,7 +134,7 @@ return packer.startup(function(use)
   use "Cian911/vim-cadence"
 
   --- Unity
-  use "OmniSharp/omnisharp-vim"
+  -- use "OmniSharp/omnisharp-vim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

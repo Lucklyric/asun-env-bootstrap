@@ -18,7 +18,8 @@
 # check the local terminfo database and use `alacritty` if it is
 # available, otherwise `xterm-256color` is used.
 #TERM: alacritty
-#window:
+window:
+  opacity: 0.86
 # Window dimensions (changes require restart)
 #
 # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -375,7 +376,6 @@
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.86
 
 #selection:
 # This string contains all characters that are used as separators for
@@ -481,16 +481,17 @@ hints:
   #   - MoveViModeCursor
   #       Move the vi mode cursor to the beginning of the hint.
   enabled:
-  - regex: "(magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
-            [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
-    command: xdg-open
-    post_processing: true
-    mouse:
-      enabled: true
-      mods: None
-    binding:
-      key: U
-      mods: Control|Shift
+    - regex:
+        "(magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+        [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+      command: xdg-open
+      post_processing: true
+      mouse:
+        enabled: true
+        mods: None
+      binding:
+        key: U
+        mods: Control|Shift
   #
 # Mouse bindings
 #
@@ -710,93 +711,33 @@ key_bindings:
   - { key: Copy, action: Copy }
   - { key: L, mods: Control, action: ClearLogNotice }
   - { key: L, mods: Control, mode: ~Vi, chars: "\f" }
-  - {
-      key: PageUp,
-      mods: Shift,
-      mode: ~Alt,
-      action: ScrollPageUp
-    }
-  - {
-      key: PageDown,
-      mods: Shift,
-      mode: ~Alt,
-      action: ScrollPageDown
-    }
-  - {
-      key: Home,
-      mods: Shift,
-      mode: ~Alt,
-      action: ScrollToTop
-    }
-  - {
-      key: End,
-      mods: Shift,
-      mode: ~Alt,
-      action: ScrollToBottom
-    }
+  - { key: PageUp, mods: Shift, mode: ~Alt, action: ScrollPageUp }
+  - { key: PageDown, mods: Shift, mode: ~Alt, action: ScrollPageDown }
+  - { key: Home, mods: Shift, mode: ~Alt, action: ScrollToTop }
+  - { key: End, mods: Shift, mode: ~Alt, action: ScrollToBottom }
 
   # Vi Mode
-  - {
-      key: Space,
-      mods: Shift|Control,
-      mode: Vi,
-      action: ScrollToBottom
-    }
+  - { key: Space, mods: Shift|Control, mode: Vi, action: ScrollToBottom }
   - { key: Space, mods: Shift|Control, action: ToggleViMode }
   - { key: Escape, mode: Vi, action: ClearSelection }
   - { key: I, mode: Vi, action: ScrollToBottom }
   - { key: I, mode: Vi, action: ToggleViMode }
   - { key: C, mods: Control, mode: Vi, action: ToggleViMode }
   - { key: Y, mods: Control, mode: Vi, action: ScrollLineUp }
-  - {
-      key: E,
-      mods: Control,
-      mode: Vi,
-      action: ScrollLineDown
-    }
+  - { key: E, mods: Control, mode: Vi, action: ScrollLineDown }
   - { key: G, mode: Vi, action: ScrollToTop }
   - { key: G, mods: Shift, mode: Vi, action: ScrollToBottom }
   - { key: B, mods: Control, mode: Vi, action: ScrollPageUp }
-  - {
-      key: F,
-      mods: Control,
-      mode: Vi,
-      action: ScrollPageDown
-    }
-  - {
-      key: U,
-      mods: Control,
-      mode: Vi,
-      action: ScrollHalfPageUp
-    }
-  - {
-      key: D,
-      mods: Control,
-      mode: Vi,
-      action: ScrollHalfPageDown
-    }
+  - { key: F, mods: Control, mode: Vi, action: ScrollPageDown }
+  - { key: U, mods: Control, mode: Vi, action: ScrollHalfPageUp }
+  - { key: D, mods: Control, mode: Vi, action: ScrollHalfPageDown }
   - { key: Y, mode: Vi, action: Copy }
   - { key: Y, mode: Vi, action: ClearSelection }
   - { key: Copy, mode: Vi, action: ClearSelection }
   - { key: V, mode: Vi, action: ToggleNormalSelection }
-  - {
-      key: V,
-      mods: Shift,
-      mode: Vi,
-      action: ToggleLineSelection
-    }
-  - {
-      key: V,
-      mods: Control,
-      mode: Vi,
-      action: ToggleBlockSelection
-    }
-  - {
-      key: V,
-      mods: Alt,
-      mode: Vi,
-      action: ToggleSemanticSelection
-    }
+  - { key: V, mods: Shift, mode: Vi, action: ToggleLineSelection }
+  - { key: V, mods: Control, mode: Vi, action: ToggleBlockSelection }
+  - { key: V, mods: Alt, mode: Vi, action: ToggleSemanticSelection }
   - { key: Return, mode: Vi, action: Open }
   - { key: K, mode: Vi, action: Up }
   - { key: J, mode: Vi, action: Down }
@@ -808,12 +749,7 @@ key_bindings:
   - { key: Right, mode: Vi, action: Right }
   - { key: Key0, mode: Vi, action: First }
   - { key: Key4, mods: Shift, mode: Vi, action: Last }
-  - {
-      key: Key6,
-      mods: Shift,
-      mode: Vi,
-      action: FirstOccupied
-    }
+  - { key: Key6, mods: Shift, mode: Vi, action: FirstOccupied }
   - { key: H, mods: Shift, mode: Vi, action: High }
   - { key: M, mods: Shift, mode: Vi, action: Middle }
   - { key: L, mods: Shift, mode: Vi, action: Low }
@@ -825,17 +761,12 @@ key_bindings:
   - { key: E, mods: Shift, mode: Vi, action: WordRightEnd }
   - { key: Key5, mods: Shift, mode: Vi, action: Bracket }
   - { key: Slash, mode: Vi, action: SearchForward }
-  - {
-      key: Slash,
-      mods: Shift,
-      mode: Vi,
-      action: SearchBackward
-    }
+  - { key: Slash, mods: Shift, mode: Vi, action: SearchBackward }
   - { key: N, mode: Vi, action: SearchNext }
   - { key: N, mods: Shift, mode: Vi, action: SearchPrevious }
   # (Windows, Linux, and BSD only)
-  - { key: V,              mods: Control|Shift,           action: Paste            }
-  - { key: C,              mods: Control|Shift,           action: Copy             }
+  - { key: V, mods: Control|Shift, action: Paste }
+  - { key: C, mods: Control|Shift, action: Copy }
   # - { key: F,              mods: Control|Shift,           action: SearchForward    }
   # - { key: B,              mods: Control|Shift,           action: SearchBackward   }
   # - { key: C,              mods: Control|Shift, mode: Vi, action: ClearSelection   }
@@ -920,27 +851,27 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '#000000'
-    foreground: '0xfffbf6'
+    background: "#000000"
+    foreground: "0xfffbf6"
 
   # Normal colors
   normal:
-    black:   '#2e2e2e'
-    red:     '#eb4129'
-    green:   '#ffabfb'
-    yellow:  '#f6c744'
-    blue:    '#47a0f3'
-    magenta: '#7b5cb0'
-    cyan:    '#64dbed'
-    white:   '#ffffff'
+    black: "#2e2e2e"
+    red: "#eb4129"
+    green: "#ffabfb"
+    yellow: "#f6c744"
+    blue: "#47a0f3"
+    magenta: "#7b5cb0"
+    cyan: "#64dbed"
+    white: "#ffffff"
 
   # Bright colors
   bright:
-    black:   '#565656'
-    red:     '#ec5357'
-    green:   '#5af78e'
-    yellow:  '#f9da6a'
-    blue:    '#49a4f8'
-    magenta: '#a47de9'
-    cyan:    '#99faf2'
-    white:   '#ffffff'
+    black: "#565656"
+    red: "#ec5357"
+    green: "#5af78e"
+    yellow: "#f9da6a"
+    blue: "#49a4f8"
+    magenta: "#a47de9"
+    cyan: "#99faf2"
+    white: "#ffffff"
