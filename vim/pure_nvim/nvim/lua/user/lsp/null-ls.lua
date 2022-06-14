@@ -11,9 +11,12 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		-- formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
 		-- formatting.black.with({ extra_args = { "--fast" } }),
 		-- formatting.stylua,
 		-- diagnostics.flake8
 	},
+	on_attach = function ()
+		vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
+	end
 })

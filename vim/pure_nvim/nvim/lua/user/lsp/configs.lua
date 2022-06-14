@@ -11,7 +11,7 @@ local lspconfig = require("lspconfig")
 if not configs.cadence then
 	configs.cadence = {
 		default_config = {
-			cmd = { 'flow', 'cadence', 'language-server', '--enable-flow-client=false'},
+			cmd = { 'flow', 'cadence', 'language-server', '--enable-flow-client=false' },
 			root_dir = util.root_pattern('flow.json'),
 			filetypes = { 'cadence' },
 		}
