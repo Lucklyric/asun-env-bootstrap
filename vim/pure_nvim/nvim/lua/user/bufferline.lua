@@ -2,6 +2,13 @@ local status_ok, bufferline = pcall(require, "bufferline")
 if not status_ok then
   return
 end
+vim.cmd [[
+  nnoremap <silent> gb :BufferLinePick<CR>
+  " These commands will navigate through buffers in order regardless of which mode you are using
+  " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
+  nnoremap <silent>b[ :BufferLineCycleNext<CR>
+  nnoremap <silent>b] :BufferLineCyclePrev<CR>
+]]
 
 bufferline.setup {
   options = {
