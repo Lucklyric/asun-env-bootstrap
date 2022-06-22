@@ -102,11 +102,12 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use { 'glepnir/lspsaga.nvim', branch = 'main' }
+  -- use { 'glepnir/lspsaga.nvim', branch = 'main' }
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "github/copilot.vim"
+  use { "ray-x/lsp_signature.nvim" }
 
   -- use "Lucklyric/copilot.vim"
   -- use {"neoclide/coc.nvim", branch = "release", config = function() require "user.coc" end }
@@ -129,7 +130,7 @@ return packer.startup(function(use)
 
 
   -- Git
-  -- use "lewis6991/gitsigns.nvim"
+  use "lewis6991/gitsigns.nvim"
 
   -- Smart Contract
   use "tomlion/vim-solidity"
