@@ -18,7 +18,7 @@ if not configs.cadence then
 	}
 end
 
-local servers = { "jsonls", "sumneko_lua", "omnisharp", "cadence", "tsserver", "pyright"}
+local servers = { "jsonls", "sumneko_lua", "omnisharp", "cadence", "tsserver", "jedi_language_server" }
 
 lsp_installer.setup({
 	ensure_installed = servers,

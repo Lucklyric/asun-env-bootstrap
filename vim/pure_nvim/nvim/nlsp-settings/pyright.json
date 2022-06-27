@@ -1,5 +1,6 @@
 {
   "python.analysis.typeCheckingMode": "off",
+  "python.analysis.useLibraryCodeForTypes": "true",
   "python.linting.pylintArgs": [
     "--errors-only",
     "--generated-members=numpy.* ,torch.* ,cv2.* , cv.*"
