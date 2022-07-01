@@ -43,7 +43,6 @@ local kind_icons = {
   Operator = "",
   TypeParameter = "",
 }
--- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup {
   snippet = {
@@ -65,7 +64,7 @@ cmp.setup {
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true },
-    ["<C-Tab>"] = cmp.mapping(function(fallback)
+    ["<A-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif luasnip.expandable() then
@@ -129,3 +128,8 @@ cmp.setup {
     native_menu = false,
   },
 }
+
+-- vim.cmd [[
+--  imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+--  let g:copilot_no_tab_map = v:true
+-- ]]

@@ -6,6 +6,13 @@ local util = require 'lspconfig.util'
 
 local configs = require("lspconfig.configs")
 local lspconfig = require("lspconfig")
+local nlspsettings = require("nlspsettings")
+
+nlspsettings.setup({
+  local_settings_dir = ".nlsp-settings",
+  append_default_schemas = true,
+  loader = 'json'
+})
 
 -- cadence
 if not configs.cadence then
@@ -31,6 +38,9 @@ for _, server in pairs(servers) do
 	}
 	local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
 	if has_custom_opts then
+		if server == "pyright" then
+			print(vim.inspect(server_custom_opts))
+		end
 		opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
 	end
 	lspconfig[server].setup(opts)
