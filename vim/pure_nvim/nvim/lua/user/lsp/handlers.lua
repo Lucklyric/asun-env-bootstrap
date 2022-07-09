@@ -80,14 +80,24 @@ end
 
 
 M.on_attach = function(client, bufnr)
-  -- vim.notify(client.name .. " starting...")
+  lsp_keymaps(bufnr)
+  lsp_highlight_document(client)
+  require "lsp_signature".on_attach()
+  local status_ok, illuminate = pcall(require, "illuminate")
+  if not status_ok then
+    print "test"
+    return
+  end
+  illuminate.on_attach(client)
+  vim.notify(client.name .. " starting...")
   -- TODO: refactor this into a method that checks if string in list
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
-  lsp_keymaps(bufnr)
-  lsp_highlight_document(client)
-  require "lsp_signature".on_attach()
+  if client.name == "jdt.ls" then
+    vim.lsp.codelens.refresh()
+    client.resolved_capabilities.document_formatting = false
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
