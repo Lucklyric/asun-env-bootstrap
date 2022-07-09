@@ -94,3 +94,12 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+
+local ok, _ = pcall(require, "notify")
+if not ok then
+  return
+end
+pcall(function()
+  require("telescope").load_extension "notify"
+end)

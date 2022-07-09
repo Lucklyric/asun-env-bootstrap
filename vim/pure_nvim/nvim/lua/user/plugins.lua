@@ -44,6 +44,9 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
   -- use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
@@ -62,6 +65,11 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   use "easymotion/vim-easymotion" -- Easymotion
   use { 'kkoomen/vim-doge', run = function() vim.fn['doge#install']() end }
+  use { "rcarriga/nvim-notify",
+    config = function()
+      require("user.notify")
+    end,
+    requires = { "nvim-telescope/telescope.nvim" } }
   -- use "axelf4/vim-strip-trailing-whitespace"
 
   -- better buffer delete management
@@ -117,8 +125,6 @@ return packer.startup(function(use)
   -- lint
   use "wfleming/vim-codeclimate"
 
-  -- Telescope
-  use "nvim-telescope/telescope.nvim"
 
   -- Treesitter
   use {
