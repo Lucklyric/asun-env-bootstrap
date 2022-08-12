@@ -9,13 +9,23 @@ local lspconfig = require("lspconfig")
 local nlspsettings = require("nlspsettings")
 
 nlspsettings.setup({
-  local_settings_dir = ".nlsp-settings",
-  append_default_schemas = true,
-  loader = 'json'
+	local_settings_dir = ".nlsp-settings",
+	append_default_schemas = true,
+	loader = 'json'
 })
 
 
-local servers = { "jsonls", "sumneko_lua", "omnisharp", "cadence", "tsserver", "jedi_language_server", "jdtls" }
+local servers = {
+	"jsonls",
+	"sumneko_lua",
+	"omnisharp",
+	"cadence",
+	"tsserver",
+	"jedi_language_server",
+	"jdtls",
+	"taplo",
+	"rust_analyzer"
+}
 
 -- cadence
 if not configs.cadence then
@@ -46,6 +56,16 @@ for _, server in pairs(servers) do
 	end
 
 	if server == "jdtls" then goto continue end
+
+	if server == "rust_analyzer" then
+		require("rust-tools").setup({
+			server = {
+				on_attach = require("user.lsp.handlers").on_attach,
+				capabilities = require("user.lsp.handlers").capabilities,
+			}
+		})
+		goto continue
+	end
 
 	lspconfig[server].setup(opts)
 

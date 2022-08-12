@@ -98,6 +98,9 @@ M.on_attach = function(client, bufnr)
     vim.lsp.codelens.refresh()
     client.resolved_capabilities.document_formatting = false
   end
+  if client.name == "rust_analyzer" then
+    vim.lsp.codelens.refresh()
+  end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

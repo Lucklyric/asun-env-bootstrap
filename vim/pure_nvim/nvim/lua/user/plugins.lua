@@ -143,6 +143,9 @@ return packer.startup(function(use)
   --- Java
   use 'mfussenegger/nvim-jdtls'
 
+  --- Rust
+  use 'simrat39/rust-tools.nvim'
+
   -- Smart Contract
   use "tomlion/vim-solidity"
   use "Cian911/vim-cadence"
