@@ -55,7 +55,7 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
+  use { "akinsho/bufferline.nvim", commit = "c78b3ecf9539a719828bca82fc7ddb9b3ba0c353" }
   -- use "moll/vim-bbye"
   use "Asheq/close-buffers.vim"
   use "nvim-lualine/lualine.nvim"
@@ -114,12 +114,17 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
+  -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use { "ray-x/lsp_signature.nvim" }
   use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
-
+  use { "williamboman/mason.nvim",
+    config = function()
+      require("user.lsp.mason")
+    end,
+  }
+  use { "williamboman/mason-lspconfig.nvim" }
   -- use { 'glepnir/lspsaga.nvim', branch = 'main' }
   use "github/copilot.vim"
 
