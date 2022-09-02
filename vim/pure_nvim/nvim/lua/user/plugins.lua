@@ -154,6 +154,7 @@ return packer.startup(function(use)
   -- Smart Contract
   use "tomlion/vim-solidity"
   use "Cian911/vim-cadence"
+  use "modocache/move.vim"
 
   --- Unity
   -- use "OmniSharp/omnisharp-vim"

@@ -24,7 +24,8 @@ local servers = {
 	"jedi_language_server",
 	"jdtls",
 	"taplo",
-	"rust_analyzer"
+	"rust_analyzer",
+	"move_analyzer",
 }
 
 -- cadence
@@ -34,6 +35,16 @@ if not configs.cadence then
 			cmd = { 'flow', 'cadence', 'language-server', '--enable-flow-client=false' },
 			root_dir = util.root_pattern('flow.json'),
 			filetypes = { 'cadence' },
+		}
+	}
+end
+
+if not configs.move_analyzer then
+	configs.move_analyzer = {
+		default_config = {
+			cmd = { 'move-analyzer'},
+			root_dir = util.root_pattern('Move.toml'),
+			filetypes = { 'move' },
 		}
 	}
 end
