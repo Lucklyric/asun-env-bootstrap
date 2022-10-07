@@ -2,14 +2,15 @@ local status_ok, lsp_installer = pcall(require, "mason-lspconfig")
 if not status_ok then
 	return
 end
-local util = require 'lspconfig.util'
 
+local util = require 'lspconfig.util'
 local configs = require("lspconfig.configs")
 local lspconfig = require("lspconfig")
 local nlspsettings = require("nlspsettings")
 
 nlspsettings.setup({
 	local_settings_dir = ".nlsp-settings",
+  local_settings_root_markers_fallback = { '.git' },
 	append_default_schemas = true,
 	loader = 'json'
 })
@@ -18,7 +19,7 @@ nlspsettings.setup({
 local servers = {
 	"jsonls",
 	"sumneko_lua",
-	"omnisharp",
+	"omnisharp_mono",
 	"cadence",
 	"tsserver",
 	"jedi_language_server",

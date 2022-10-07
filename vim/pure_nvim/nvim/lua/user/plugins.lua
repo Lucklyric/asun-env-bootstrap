@@ -51,7 +51,7 @@ return packer.startup(function(use)
       require("user.telescope")
     end,
   }
-  -- use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
@@ -113,18 +113,18 @@ return packer.startup(function(use)
 
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use { "ray-x/lsp_signature.nvim" }
-  use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
   use { "williamboman/mason.nvim",
     config = function()
       require("user.lsp.mason")
     end,
   }
   use { "williamboman/mason-lspconfig.nvim" }
+  use "neovim/nvim-lspconfig" -- enable LSP
+  -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
+  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use { "ray-x/lsp_signature.nvim" }
+  use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
   -- use { 'glepnir/lspsaga.nvim', branch = 'main' }
   use "github/copilot.vim"
 
@@ -157,7 +157,7 @@ return packer.startup(function(use)
   use "modocache/move.vim"
 
   --- Unity
-  -- use "OmniSharp/omnisharp-vim"
+  use "Lucklyric/omnisharp-extended-lsp.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
