@@ -90,11 +90,6 @@ local mappings = {
   ["c"] = { "<cmd>Bdelete this<CR>", "Close Buffer" },
   ["B"] = { "<cmd>Bdelete menu<CR>", "Buffer quick menu" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-  ["f"] = {
-    "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-    "Find files",
-  },
-  ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   p = {
     name = "Packer",
@@ -104,7 +99,16 @@ local mappings = {
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
-
+  f = {
+    name = "Find",
+    w = { ":Telescope live_grep<CR>", "Word" },
+    f = { ":Telescope find_files<CR>", "File" },
+    o = { ":Telescope oldfiles<CR>", "Old File" },
+    d = { ":Telescope find_directories<CR>", "Directory" },
+    b = { ":Telescope buffers<CR>", "Buffer" },
+    h = { ":Telescope help_tags<CR>", "Help File" },
+    B = { ":Telescope marks<CR>", "Find BookMark" },
+  },
   C = {
     name = "COC",
     a = { "<cmd>CocAction<cr>", "Action" },

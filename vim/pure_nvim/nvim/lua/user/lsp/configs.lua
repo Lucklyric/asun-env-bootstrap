@@ -10,7 +10,7 @@ local nlspsettings = require("nlspsettings")
 
 nlspsettings.setup({
 	local_settings_dir = ".nlsp-settings",
-  local_settings_root_markers_fallback = { '.git' },
+	local_settings_root_markers_fallback = { '.git' },
 	append_default_schemas = true,
 	loader = 'json'
 })
@@ -20,14 +20,27 @@ local servers = {
 	"jsonls",
 	"sumneko_lua",
 	"omnisharp_mono",
-	"cadence",
 	"tsserver",
 	"jedi_language_server",
 	"jdtls",
 	"taplo",
 	"rust_analyzer",
+}
+
+lsp_installer.setup({
+	ensure_installed = servers,
+})
+
+
+local custom_servers = {
+	"cadence",
 	"move_analyzer",
 }
+
+-- append custom serviers
+for _, server in ipairs(custom_servers) do
+	table.insert(servers, server)
+end
 
 -- cadence
 if not configs.cadence then
@@ -43,16 +56,13 @@ end
 if not configs.move_analyzer then
 	configs.move_analyzer = {
 		default_config = {
-			cmd = { 'move-analyzer'},
+			cmd = { 'move-analyzer' },
 			root_dir = util.root_pattern('Move.toml'),
 			filetypes = { 'move' },
 		}
 	}
 end
 
-lsp_installer.setup({
-	ensure_installed = servers,
-})
 
 for _, server in pairs(servers) do
 	local opts = {
