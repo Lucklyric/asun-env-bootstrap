@@ -125,7 +125,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use { "ray-x/lsp_signature.nvim" }
   use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" }
-  -- use { 'glepnir/lspsaga.nvim', branch = 'main' }
+  use { 'glepnir/lspsaga.nvim', branch = 'main' }
   use "github/copilot.vim"
 
   -- use "Lucklyric/copilot.vim"

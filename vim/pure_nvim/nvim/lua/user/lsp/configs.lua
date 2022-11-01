@@ -35,6 +35,7 @@ lsp_installer.setup({
 local custom_servers = {
 	"cadence",
 	"move_analyzer",
+	"solidity_ls",
 }
 
 -- append custom serviers
