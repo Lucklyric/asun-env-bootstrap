@@ -127,12 +127,6 @@ end
 M.on_attach = function(client, bufnr)
   --[[ lsp_keymaps(bufnr) ]]
   lsp_highlight_document(client)
-  local status_ok, illuminate = pcall(require, "illuminate")
-  if not status_ok then
-    print "test"
-    return
-  end
-  illuminate.on_attach(client)
   vim.notify(client.name .. " starting...")
   -- TODO: refactor this into a method that checks if string in list
   if client.name == "tsserver" then

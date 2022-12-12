@@ -83,8 +83,9 @@ return packer.startup(function(use)
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   -- use "lunarvim/darkplus.nvim"
+  --[[ use 'folke/tokyonight.nvim' ]]
   use "lucklyric/palenight.vim"
-  use "sheerun/vim-polyglot"
+  --[[ use "sheerun/vim-polyglot" ]]
 
 
   -- Markdown
@@ -112,6 +113,11 @@ return packer.startup(function(use)
   -- use 'quangnguyen30192/cmp-nvim-ultisnips'
   -- use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async',
+    config = function()
+      require('user.ufo')
+    end
+  }
 
   -- LSP
   use { "williamboman/mason.nvim",
@@ -125,8 +131,7 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use { "ray-x/lsp_signature.nvim" }
-  --[[ use { "RRethy/vim-illuminate", commit = "c82e6d04f27a41d7fdcad9be0bce5bb59fcb78e5" } ]]
-  use "RRethy/vim-illuminate"
+  use { "yamatsum/nvim-cursorline", config = function() require("user.cursorline") end }
   use { 'glepnir/lspsaga.nvim', branch = 'main' }
   use "github/copilot.vim"
 
@@ -154,7 +159,7 @@ return packer.startup(function(use)
   use 'simrat39/rust-tools.nvim'
 
   -- Smart Contract
-  use "tomlion/vim-solidity"
+  --[[ use "tomlion/vim-solidity" ]]
   use "Cian911/vim-cadence"
   use "modocache/move.vim"
 
