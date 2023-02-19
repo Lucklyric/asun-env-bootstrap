@@ -75,7 +75,7 @@ keymap(
 )
 keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = ture })' ]]
+vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
 
 -- Rewrite if saga is installed
 local status_ok, _ = pcall(require, "lspsaga")
@@ -121,6 +121,10 @@ if status_ok then
 
   -- Hover Doc
   keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
+
+  -- Callhierarchy
+  keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
+  keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 end
 --[[ end ]]
 

@@ -134,19 +134,34 @@ return packer.startup(function(use)
   use { "yamatsum/nvim-cursorline", config = function() require("user.cursorline") end }
   use { 'glepnir/lspsaga.nvim', branch = 'main' }
   use "github/copilot.vim"
+  -- Packer
+  use({
+    "jackMort/ChatGPT.nvim",
+    config = function()
+      require("user.chatgpt")
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  })
 
   -- use "Lucklyric/copilot.vim"
   -- use {"neoclide/coc.nvim", branch = "release", config = function() require "user.coc" end }
-
   -- lint
   use "wfleming/vim-codeclimate"
 
+  -- indendt
+  use { "Darazaki/indent-o-matic", config = function() require("user.indent-o-matic") end }
 
+  -- Treesitter
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
+    commit = "4cccb6f494eb255b32a290d37c35ca12584c74d0",
   }
+  use 'nvim-treesitter/playground'
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git

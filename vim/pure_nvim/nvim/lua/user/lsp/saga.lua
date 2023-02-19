@@ -4,4 +4,4 @@ if not saga_status_ok then
 	return
 end
 
-saga.init_lsp_saga()
+saga.setup({})
