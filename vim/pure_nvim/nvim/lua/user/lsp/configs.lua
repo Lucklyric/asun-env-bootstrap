@@ -18,7 +18,7 @@ nlspsettings.setup({
 
 local servers = {
 	"jsonls",
-	"sumneko_lua",
+	"lua_ls",
 	"omnisharp_mono",
 	"tsserver",
 	"jedi_language_server",
