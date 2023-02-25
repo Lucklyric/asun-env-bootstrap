@@ -120,14 +120,9 @@ return packer.startup(function(use)
   }
 
   -- LSP
-  use { "williamboman/mason.nvim",
-    config = function()
-      require("user.lsp.mason")
-    end,
-  }
-  use { "williamboman/mason-lspconfig.nvim" }
+  use { "williamboman/mason.nvim" }
   use "neovim/nvim-lspconfig" -- enable LSP
-  -- use { "williamboman/nvim-lsp-installer", commit = "e9f13d7acaa60aff91c58b923002228668c8c9e6" } -- simple to use language server installer
+  use { "williamboman/mason-lspconfig.nvim" }
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use { "ray-x/lsp_signature.nvim" }

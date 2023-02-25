@@ -4,4 +4,8 @@ if not saga_status_ok then
 	return
 end
 
-saga.setup({})
+saga.setup({
+	diagnostic = {
+		on_insert = false
+	}
+})
