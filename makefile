@@ -1,4 +1,4 @@
-.PHONY: kitty clean-kitty vim clean-vim tmux clean-tmux tmux-tpm zsh zsh-plugins oh-my-zsh update-zsh-plugins clean-zsh
+.PHONY: kitty clean-kitty vim clean-vim tmux clean-tmux tmux-tpm zsh zsh-plugins oh-my-zsh update-zsh-plugins clean-zsh alacritty
 kitty:
 	stow --verbose --target=$(HOME) kitty
 
@@ -38,3 +38,6 @@ update-zsh-plugins:
 		git -C $(HOME)/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting pull \
 		&& git -C $(HOME)/.oh-my-zsh/custom/plugins/zsh-autosuggestions pull \
 		&& git -C $(HOME)/.oh-my-zsh/custom/plugins/zsh-autocomplete pull
+
+alacritty:
+	stow --verbose --target=$(HOME) alacritty
