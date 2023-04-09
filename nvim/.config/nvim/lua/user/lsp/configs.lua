@@ -21,7 +21,8 @@ local servers = {
 	"lua_ls",
 	"omnisharp_mono",
 	"tsserver",
-	"jedi_language_server",
+	--[[ "jedi_language_server", ]]
+	"pyright",
 	"jdtls",
 	"taplo",
 	"rust_analyzer",
