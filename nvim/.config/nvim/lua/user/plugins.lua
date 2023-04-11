@@ -77,10 +77,26 @@ local plugins = {
   { "neovim/nvim-lspconfig" }, -- enable LSP
   { "williamboman/mason-lspconfig.nvim" },
   { "tamago324/nlsp-settings.nvim" }, -- language server settings defined in json for
-  { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters
+  --[[ { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters ]]
+  {
+    "jay-babu/mason-null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "williamboman/mason.nvim",
+      "jose-elias-alvarez/null-ls.nvim",
+    },
+    config = function()
+      require("user.lsp.null-ls")
+    end,
+  },
   { "ray-x/lsp_signature.nvim" },
   { "yamatsum/nvim-cursorline", config = function() require("user.cursorline") end },
-  { 'glepnir/lspsaga.nvim', branch = 'main' },
+  { "glepnir/lspsaga.nvim",
+    event = "LspAttach",
+    dependencies = {
+      { "nvim-treesitter/nvim-treesitter" }
+    }
+  },
   { "github/copilot.vim" },
 
   -- lint

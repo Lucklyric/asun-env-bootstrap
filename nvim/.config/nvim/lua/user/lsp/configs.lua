@@ -22,7 +22,8 @@ local servers = {
 	"omnisharp_mono",
 	"tsserver",
 	--[[ "jedi_language_server", ]]
-	"pyright",
+	--[[ "pyright", ]]
+	"pylsp",
 	"jdtls",
 	"taplo",
 	"rust_analyzer",

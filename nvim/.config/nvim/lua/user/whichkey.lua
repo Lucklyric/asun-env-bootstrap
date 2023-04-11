@@ -86,19 +86,19 @@ local mappings = {
   },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
-  ["q"] = { "<cmd>q!<CR>", "Quit" },
+  --[[ ["q"] = { "<cmd>q!<CR>", "Quit" }, ]]
   --[[ ["c"] = { "<cmd>Bdelete this<CR>", "Close Buffer" }, ]]
   ["B"] = { "<cmd>Bdelete menu<CR>", "Buffer quick menu" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
+  --[[ p = { ]]
+  --[[   name = "Packer", ]]
+  --[[   c = { "<cmd>PackerCompile<cr>", "Compile" }, ]]
+  --[[   i = { "<cmd>PackerInstall<cr>", "Install" }, ]]
+  --[[   s = { "<cmd>PackerSync<cr>", "Sync" }, ]]
+  --[[   S = { "<cmd>PackerStatus<cr>", "Status" }, ]]
+  --[[   u = { "<cmd>PackerUpdate<cr>", "Update" }, ]]
+  --[[ }, ]]
   f = {
     name = "Find",
     w = { ":Telescope live_grep<CR>", "Word" },
