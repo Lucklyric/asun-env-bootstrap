@@ -38,7 +38,7 @@ lsp_installer.setup({
 local custom_servers = {
 	"cadence",
 	"move_analyzer",
-	"solidity_ls",
+	"solidity",
 }
 
 -- append custom serviers
@@ -63,6 +63,17 @@ if not configs.move_analyzer then
 			cmd = { 'move-analyzer' },
 			root_dir = util.root_pattern('Move.toml'),
 			filetypes = { 'move' },
+		}
+	}
+end
+
+if not configs.solidity then
+	configs.solidity = {
+		default_config = {
+			cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
+			filetypes = { 'solidity' },
+			root_dir = lspconfig.util.find_git_ancestor,
+			single_file_support = true,
 		}
 	}
 end
