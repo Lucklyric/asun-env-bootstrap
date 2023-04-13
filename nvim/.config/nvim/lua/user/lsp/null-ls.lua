@@ -31,3 +31,10 @@ null_ls.setup({
 		vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
 	end
 })
+
+
+function toggle_cspell()
+	require("null-ls").toggle(diagnostics.cspell)
+end
+
+toggle_cspell()

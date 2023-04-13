@@ -38,7 +38,7 @@ local plugins = {
   { "antoinemadec/FixCursorHold.nvim" }, -- This is needed to fix lsp doc highlight
   { "folke/which-key.nvim" },
   { "easymotion/vim-easymotion" }, -- Easymotion
-  { 'kkoomen/vim-doge', build = function() vim.fn['doge#install']() end },
+  { 'kkoomen/vim-doge',                   build = function() vim.fn['doge#install']() end },
   { "rcarriga/nvim-notify",
     config = function()
       require("user.notify")
@@ -60,6 +60,24 @@ local plugins = {
   { "saadparwaiz1/cmp_luasnip" }, -- snippet completions
   { "hrsh7th/cmp-nvim-lsp" },
 
+  -- aigc
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup({
+        popup_input = {
+          submit = "<C-s>",
+        }
+      })
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  },
+
   -- snippets
   { "L3MON4D3/LuaSnip" }, --snippet engine
   { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
@@ -70,7 +88,7 @@ local plugins = {
   -- use 'quangnguyen30192/cmp-nvim-ultisnips'
   -- use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
-  { 'kevinhwang91/nvim-ufo', config = function() require('user.ufo') end, dependencies = { 'kevinhwang91/promise-async' } },
+  { 'kevinhwang91/nvim-ufo',            config = function() require('user.ufo') end, dependencies = { 'kevinhwang91/promise-async' } },
 
   -- LSP
   { "williamboman/mason.nvim" },

@@ -99,6 +99,7 @@ local mappings = {
   --[[   S = { "<cmd>PackerStatus<cr>", "Status" }, ]]
   --[[   u = { "<cmd>PackerUpdate<cr>", "Update" }, ]]
   --[[ }, ]]
+  ["cs"] = { "<cmd>lua toggle_cspell()<CR>", "Toggle cspell" },
   f = {
     name = "Find",
     w = { ":Telescope live_grep<CR>", "Word" },
@@ -114,7 +115,6 @@ local mappings = {
     a = { "<cmd>CocAction<cr>", "Action" },
     q = { "<cmd>CocQuickfix<cr>", "Quickfix" },
   },
-
   l = {
     name = "LSP",
     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
