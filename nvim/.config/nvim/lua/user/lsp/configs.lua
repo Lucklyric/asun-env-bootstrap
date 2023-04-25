@@ -27,56 +27,48 @@ local servers = {
 	"jdtls",
 	"taplo",
 	"rust_analyzer",
-	"gopls"
-}
-
-lsp_installer.setup({
-	ensure_installed = servers,
-})
-
-
-local custom_servers = {
+	"gopls",
 	"cadence",
 	"move_analyzer",
 	"solidity",
 }
 
+lsp_installer.setup({
+	--[[ ensure_installed = servers, ]]
+})
+
+
+local custom_configs = {}
 -- append custom serviers
-for _, server in ipairs(custom_servers) do
-	table.insert(servers, server)
-end
+--[[ for _, server in ipairs(custom_servers) do ]]
+--[[ 	table.insert(servers, server) ]]
+--[[ end ]]
 
 -- cadence
-if not configs.cadence then
-	configs.cadence = {
-		default_config = {
-			cmd = { 'flow', 'cadence', 'language-server', '--enable-flow-client=false' },
-			root_dir = util.root_pattern('flow.json'),
-			filetypes = { 'cadence' },
-		}
+custom_configs.cadence = {
+	default_config = {
+		cmd = { 'flow', 'cadence', 'language-server', '--enable-flow-client=false' },
+		root_dir = util.root_pattern('flow.json'),
+		filetypes = { 'cadence' },
 	}
-end
+}
 
-if not configs.move_analyzer then
-	configs.move_analyzer = {
-		default_config = {
-			cmd = { 'move-analyzer' },
-			root_dir = util.root_pattern('Move.toml'),
-			filetypes = { 'move' },
-		}
+custom_configs.move_analyzer = {
+	default_config = {
+		cmd = { 'move-analyzer' },
+		root_dir = util.root_pattern('Move.toml'),
+		filetypes = { 'move' },
 	}
-end
+}
 
-if not configs.solidity then
-	configs.solidity = {
-		default_config = {
-			cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
-			filetypes = { 'solidity' },
-			root_dir = lspconfig.util.find_git_ancestor,
-			single_file_support = true,
-		}
+custom_configs.solidity = {
+	default_config = {
+		cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
+		filetypes = { 'solidity' },
+		root_dir = lspconfig.util.find_git_ancestor,
+		single_file_support = true,
 	}
-end
+}
 
 
 for _, server in pairs(servers) do
@@ -102,6 +94,11 @@ for _, server in pairs(servers) do
 			}
 		})
 		goto continue
+	end
+
+	-- if server in custom_configs then use custom config
+	if custom_configs[server] then
+		opts.default_config = custom_configs.default_config
 	end
 
 	lspconfig[server].setup(opts)
