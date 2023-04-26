@@ -44,7 +44,15 @@ local plugins = {
       require("user.notify")
     end,
     dependencies = { "nvim-telescope/telescope.nvim" } },
-  { "folke/tokyonight.nvim" },
+  { "folke/tokyonight.nvim", config = function()
+    require("tokyonight").setup({
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+      }
+    })
+  end
+  },
   --[[ { "LunarVim/Colorschemes" }, ]]
 
   -- Markdown
