@@ -35,16 +35,17 @@ local plugins = {
   --[[ {"lewis6991/impatient.nvim"}, ]]
   { "lukas-reineke/indent-blankline.nvim" },
   { "goolord/alpha-nvim" },
-  { "antoinemadec/FixCursorHold.nvim" }, -- This is needed to fix lsp doc highlight
+  --[[ { "antoinemadec/FixCursorHold.nvim" }, -- This is needed to fix lsp doc highlight ]]
   { "folke/which-key.nvim" },
   { "easymotion/vim-easymotion" }, -- Easymotion
-  { 'kkoomen/vim-doge',                   build = function() vim.fn['doge#install']() end },
+  { 'kkoomen/vim-doge', build = function() vim.fn['doge#install']() end },
   { "rcarriga/nvim-notify",
     config = function()
       require("user.notify")
     end,
     dependencies = { "nvim-telescope/telescope.nvim" } },
-  { "lucklyric/palenight.vim" },
+  { "folke/tokyonight.nvim" },
+  --[[ { "LunarVim/Colorschemes" }, ]]
 
   -- Markdown
   { "lervag/vimtex" },
@@ -116,7 +117,7 @@ local plugins = {
   -- use 'quangnguyen30192/cmp-nvim-ultisnips'
   -- use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
-  { 'kevinhwang91/nvim-ufo',            config = function() require('user.ufo') end, dependencies = { 'kevinhwang91/promise-async' } },
+  { 'kevinhwang91/nvim-ufo', config = function() require('user.ufo') end, dependencies = { 'kevinhwang91/promise-async' } },
 
   -- LSP
   { "williamboman/mason.nvim" },

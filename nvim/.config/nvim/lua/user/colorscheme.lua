@@ -1,6 +1,6 @@
 vim.cmd [[
 try
-  colorscheme palenight
+  colorscheme tokyonight
   set background=dark
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
