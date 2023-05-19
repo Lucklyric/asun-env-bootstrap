@@ -30,7 +30,7 @@ local servers = {
 	"gopls",
 	"cadence",
 	"move_analyzer",
-	"solidity",
+	"solidity_hardhat",
 }
 
 lsp_installer.setup({
@@ -44,24 +44,7 @@ local custom_configs = {}
 --[[ 	table.insert(servers, server) ]]
 --[[ end ]]
 
--- cadence
-custom_configs.cadence = {
-	default_config = {
-		cmd = { 'flow', 'cadence', 'language-server', '--enable-flow-client=false' },
-		root_dir = util.root_pattern('flow.json'),
-		filetypes = { 'cadence' },
-	}
-}
-
-custom_configs.move_analyzer = {
-	default_config = {
-		cmd = { 'move-analyzer' },
-		root_dir = util.root_pattern('Move.toml'),
-		filetypes = { 'move' },
-	}
-}
-
-custom_configs.solidity = {
+configs.solidity_hardhat = {
 	default_config = {
 		cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
 		filetypes = { 'solidity' },
