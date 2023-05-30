@@ -36,9 +36,11 @@ local plugins = {
   { "lukas-reineke/indent-blankline.nvim" },
   { "goolord/alpha-nvim" },
   --[[ { "antoinemadec/FixCursorHold.nvim" }, -- This is needed to fix lsp doc highlight ]]
-  { "folke/which-key.nvim" },
+  { "folke/which-key.nvim", config = function()
+    require("user.whichkey")
+  end },
   { "easymotion/vim-easymotion" }, -- Easymotion
-  { 'kkoomen/vim-doge',                   build = function() vim.fn['doge#install']() end },
+  { 'kkoomen/vim-doge', build = function() vim.fn['doge#install']() end },
   { "rcarriga/nvim-notify",
     config = function()
       require("user.notify")
@@ -62,7 +64,7 @@ local plugins = {
 
   -- Markdown
   { "lervag/vimtex" },
-  { 'lucklyric/markdown-preview.nvim',  build = 'cd app && yarn install' },
+  { 'lucklyric/markdown-preview.nvim', build = 'cd app && yarn install' },
   { "plasticboy/vim-markdown" },
   { 'mzlogin/vim-markdown-toc' },
 
@@ -75,6 +77,19 @@ local plugins = {
   { "hrsh7th/cmp-nvim-lsp" },
 
   -- aigc
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require('user.chatgpt')
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+      "folke/which-key.nvim",
+    }
+  },
   --[[ { ]]
   --[[   "Bryley/neoai.nvim", ]]
   --[[   dependencies = { ]]
@@ -130,7 +145,7 @@ local plugins = {
   -- use 'quangnguyen30192/cmp-nvim-ultisnips'
   -- use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
-  { 'kevinhwang91/nvim-ufo',            config = function() require('user.ufo') end, dependencies = { 'kevinhwang91/promise-async' } },
+  { 'kevinhwang91/nvim-ufo', config = function() require('user.ufo') end, dependencies = { 'kevinhwang91/promise-async' } },
 
   -- LSP
   { "williamboman/mason.nvim" },
@@ -161,6 +176,11 @@ local plugins = {
 
   -- lint
   { "wfleming/vim-codeclimate" },
+
+  {
+    "folke/trouble.nvim",
+    dependencies = { "kyazdani42/nvim-web-devicons" },
+  },
 
   -- indendt
   { "Darazaki/indent-o-matic", config = function() require("user.indent-o-matic") end },
