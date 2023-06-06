@@ -62,6 +62,8 @@ local plugins = {
   },
   --[[ { "LunarVim/Colorschemes" }, ]]
 
+  { "rafamadriz/neon" },
+
   -- Markdown
   { "lervag/vimtex" },
   { 'lucklyric/markdown-preview.nvim', build = 'cd app && yarn install' },

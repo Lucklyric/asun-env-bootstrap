@@ -25,6 +25,7 @@
   "mason-null-ls.nvim": { "branch": "main", "commit": "cfbd83909cbc56e2f07cb3f8a03157e069c5c91c" },
   "mason.nvim": { "branch": "main", "commit": "9a68a4bd997b72cee4132459e0fd99eea0cdc627" },
   "move.vim": { "branch": "main", "commit": "feafeeffc9176318c3244d1ae11dff02cd9565ad" },
+  "neon": { "branch": "main", "commit": "7765aaa7d1cd3804176140644640766e4411c766" },
   "nlsp-settings.nvim": { "branch": "main", "commit": "002e0684880a65eb43ae870c02ac6ee3709b0b72" },
   "nui.nvim": { "branch": "main", "commit": "2b2732528e4a79eb8542568bd51d25f710395bd6" },
   "null-ls.nvim": { "branch": "main", "commit": "63e1ab06f362c7fcd8a1b6f95665b55814190986" },
