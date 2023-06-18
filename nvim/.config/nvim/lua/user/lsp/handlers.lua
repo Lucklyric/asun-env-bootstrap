@@ -131,6 +131,13 @@ end
 M.on_attach = function(client, bufnr)
   --[[ lsp_keymaps(bufnr) ]]
   lsp_highlight_document(client)
+  -- add autoformatting on save
+  vim.cmd [[
+    augroup Format
+      autocmd! * <buffer>
+      autocmd BufWritePre <buffer> Format
+    augroup END
+  ]]
   client.server_capabilities.semanticTokensProvider = nil
   vim.notify(client.name .. " starting...")
   -- TODO: refactor this into a method that checks if string in list
