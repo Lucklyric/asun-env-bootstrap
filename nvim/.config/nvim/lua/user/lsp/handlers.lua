@@ -75,7 +75,7 @@ keymap(
 )
 keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]]
+vim.cmd [[ command! Format execute 'lua vim.lsp.buf.format({ async = ture})' ]]
 
 -- Rewrite if saga is installed
 local status_ok, _ = pcall(require, "lspsaga")
@@ -117,7 +117,7 @@ if status_ok then
   end, { silent = true })
 
   -- Outline
-  keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", { silent = true })
+  keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>", { silent = true })
 
   -- Hover Doc
   keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
@@ -132,12 +132,6 @@ M.on_attach = function(client, bufnr)
   --[[ lsp_keymaps(bufnr) ]]
   lsp_highlight_document(client)
   -- add autoformatting on save
-  vim.cmd [[
-    augroup Format
-      autocmd! * <buffer>
-      autocmd BufWritePre <buffer> Format
-    augroup END
-  ]]
   client.server_capabilities.semanticTokensProvider = nil
   vim.notify(client.name .. " starting...")
   -- TODO: refactor this into a method that checks if string in list
