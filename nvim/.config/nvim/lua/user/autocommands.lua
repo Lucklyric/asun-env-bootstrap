@@ -32,10 +32,10 @@ vim.cmd [[
 
   autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
 
-  " augroup _lsp
-  "   autocmd!
-  "   autocmd BufWritePre * lua vim.lsp.buf.format({async = true})
-  " augroup end
+  augroup _lsp
+    autocmd!
+    autocmd BufWritePre * lua vim.lsp.buf.format({async = false})
+  augroup end
 
 ]]
 
