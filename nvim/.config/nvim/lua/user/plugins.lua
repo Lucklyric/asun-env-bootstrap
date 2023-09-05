@@ -14,11 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install your plugins here
 local plugins = {
-  { "nvim-lua/popup.nvim" }, -- An implementation of the Popup API from vim in Neovim
+  { "nvim-lua/popup.nvim" },   -- An implementation of the Popup API from vim in Neovim
   { "nvim-lua/plenary.nvim" }, -- Useful lua functions used ny lots of plugins
 
   -- Telescope
-  { "nvim-telescope/telescope.nvim",
+  {
+    "nvim-telescope/telescope.nvim",
     config = function()
       require("user.telescope")
     end,
@@ -27,6 +28,17 @@ local plugins = {
   { "numToStr/Comment.nvim" }, -- Easily comment stuff
   { "nvim-tree/nvim-web-devicons" },
   { "nvim-tree/nvim-tree.lua" },
+  {
+    "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("user.nvim-tree")
+    end,
+  },
   { "akinsho/bufferline.nvim" },
   { "Asheq/close-buffers.vim" },
   { "nvim-lualine/lualine.nvim" },
@@ -36,29 +48,36 @@ local plugins = {
   { "lukas-reineke/indent-blankline.nvim" },
   { "goolord/alpha-nvim" },
   --[[ { "antoinemadec/FixCursorHold.nvim" }, -- This is needed to fix lsp doc highlight ]]
-  { "folke/which-key.nvim", config = function()
-    require("user.whichkey")
-  end },
+  {
+    "folke/which-key.nvim",
+    config = function()
+      require("user.whichkey")
+    end
+  },
   { "easymotion/vim-easymotion" }, -- Easymotion
-  { 'kkoomen/vim-doge', build = function() vim.fn['doge#install']() end },
-  { "rcarriga/nvim-notify",
+  { 'kkoomen/vim-doge',         build = function() vim.fn['doge#install']() end },
+  {
+    "rcarriga/nvim-notify",
     config = function()
       require("user.notify")
     end,
-    dependencies = { "nvim-telescope/telescope.nvim" } },
+    dependencies = { "nvim-telescope/telescope.nvim" }
+  },
   { "LunarVim/lunar.nvim" },
-  { "folke/tokyonight.nvim", config = function()
-    require("tokyonight").setup({
-      transparent = true,
-      styles = {
-        sidebars = "transparent",
-      },
-      on_highlights = function(hl, c)
-        -- pink
-        hl.String = { fg = "#ff9cac" }
-      end
-    })
-  end
+  {
+    "folke/tokyonight.nvim",
+    config = function()
+      require("tokyonight").setup({
+        transparent = true,
+        styles = {
+          sidebars = "transparent",
+        },
+        on_highlights = function(hl, c)
+          -- pink
+          hl.String = { fg = "#ff9cac" }
+        end
+      })
+    end
   },
   --[[ { "LunarVim/Colorschemes" }, ]]
 
@@ -71,10 +90,10 @@ local plugins = {
   { 'mzlogin/vim-markdown-toc' },
 
   -- cmp plugins
-  { "hrsh7th/nvim-cmp" }, -- The completion plugin
-  { "hrsh7th/cmp-buffer" }, -- buffer completions
-  { "hrsh7th/cmp-path" }, -- path completions
-  { "hrsh7th/cmp-cmdline" }, -- cmdline completions
+  { "hrsh7th/nvim-cmp" },         -- The completion plugin
+  { "hrsh7th/cmp-buffer" },       -- buffer completions
+  { "hrsh7th/cmp-path" },         -- path completions
+  { "hrsh7th/cmp-cmdline" },      -- cmdline completions
   { "saadparwaiz1/cmp_luasnip" }, -- snippet completions
   { "hrsh7th/cmp-nvim-lsp" },
 
@@ -138,7 +157,7 @@ local plugins = {
   --[[ }, ]]
 
   -- snippets
-  { "L3MON4D3/LuaSnip" }, --snippet engine
+  { "L3MON4D3/LuaSnip" },             --snippet engine
   { "rafamadriz/friendly-snippets" }, -- a bunch of snippets to use
   -- use 'hrsh7th/cmp-vsnip'
   -- use 'hrsh7th/vim-vsnip'
@@ -147,11 +166,16 @@ local plugins = {
   -- use 'quangnguyen30192/cmp-nvim-ultisnips'
   -- use {'dsznajder/vscode-es7-javascript-react-snippets', run = 'yarn install --frozen-lockfile && yarn compile'}
 
-  { 'kevinhwang91/nvim-ufo', config = function() require('user.ufo') end, dependencies = { 'kevinhwang91/promise-async' } },
+  {
+    'kevinhwang91/nvim-ufo',
+    config = function() require('user.ufo') end,
+    dependencies = {
+      'kevinhwang91/promise-async' }
+  },
 
   -- LSP
   { "williamboman/mason.nvim" },
-  { "neovim/nvim-lspconfig" }, -- enable LSP
+  { "neovim/nvim-lspconfig" },        -- enable LSP
   { "williamboman/mason-lspconfig.nvim" },
   { "tamago324/nlsp-settings.nvim" }, -- language server settings defined in json for
   --[[ { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters ]]
@@ -168,7 +192,8 @@ local plugins = {
   },
   { "ray-x/lsp_signature.nvim" },
   { "yamatsum/nvim-cursorline", config = function() require("user.cursorline") end },
-  { "glepnir/lspsaga.nvim",
+  {
+    "glepnir/lspsaga.nvim",
     event = "LspAttach",
     dependencies = {
       { "nvim-treesitter/nvim-treesitter" }
@@ -185,7 +210,7 @@ local plugins = {
   },
 
   -- indendt
-  { "Darazaki/indent-o-matic", config = function() require("user.indent-o-matic") end },
+  { "Darazaki/indent-o-matic",                    config = function() require("user.indent-o-matic") end },
 
   -- Treesitter
   {
@@ -211,7 +236,8 @@ local plugins = {
   { "Lucklyric/omnisharp-extended-lsp.nvim" },
 
   --- minimap
-  { "gorbit99/codewindow.nvim",
+  {
+    "gorbit99/codewindow.nvim",
     config = function()
       local codewindow = require('codewindow')
       codewindow.setup()
@@ -220,7 +246,8 @@ local plugins = {
   },
 
   --trouble
-  { "folke/trouble.nvim",
+  {
+    "folke/trouble.nvim",
     opts = {
       -- your configuration comes here
       -- or leave it empty to use the default settings
@@ -255,7 +282,7 @@ local plugins = {
 local opts = {
   root = vim.fn.stdpath("data") .. "/lazy", -- directory where plugins will be installed
   defaults = {
-    lazy = false, -- should plugins be lazy-loaded?
+    lazy = false,                           -- should plugins be lazy-loaded?
     version = nil,
     -- version = "*", -- enable this to try installing the latest stable versions of plugins
   },
@@ -267,7 +294,7 @@ local opts = {
     -- defaults for the `Lazy log` command
     -- log = { "-10" }, -- show the last 10 commits
     log = { "--since=3 days ago" }, -- show commits from the last 3 days
-    timeout = 120, -- kill processes that take more than 2 minutes
+    timeout = 120,                  -- kill processes that take more than 2 minutes
     url_format = "https://github.com/%s.git",
     -- lazy.nvim requires git >=2.19.0. If you really want to use lazy with an older version,
     -- then set the below to false. This is should work, but is NOT supported and will
@@ -278,7 +305,7 @@ local opts = {
     -- directory where you store your local plugin projects
     path = "~/projects",
     ---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
-    patterns = {}, -- For example {"folke"}
+    patterns = {},    -- For example {"folke"}
     fallback = false, -- Fallback to git when local plugin doesn't exist
   },
   install = {
@@ -352,7 +379,7 @@ local opts = {
     -- automatically check for plugin updates
     enabled = false,
     concurrency = nil, ---@type number? set to 1 to check for updates very slowly
-    notify = true, -- get a notification when new updates are found
+    notify = true,    -- get a notification when new updates are found
     frequency = 3600, -- check for updates every hour
   },
   change_detection = {
@@ -366,9 +393,9 @@ local opts = {
     },
     reset_packpath = true, -- reset the package path to improve startup time
     rtp = {
-      reset = true, -- reset the runtime path to $VIMRUNTIME and your config directory
+      reset = true,        -- reset the runtime path to $VIMRUNTIME and your config directory
       ---@type string[]
-      paths = {}, -- add any custom paths here that you want to includes in the rtp
+      paths = {},          -- add any custom paths here that you want to includes in the rtp
       ---@type string[] list any plugins you want to disable here
       disabled_plugins = {
         -- "gzip",
