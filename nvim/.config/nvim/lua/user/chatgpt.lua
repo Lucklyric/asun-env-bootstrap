@@ -10,6 +10,7 @@ require("chatgpt").setup(
 		edit_with_instructions = {
 			diff = false,
 			keymaps = {
+				close = "<C-c>",
 				accept = "<C-y>",
 				toggle_diff = "<C-d>",
 				toggle_settings = "<C-o>",
@@ -18,7 +19,7 @@ require("chatgpt").setup(
 			},
 		},
 		chat = {
-			welcome_message = "Hiiiiiiiiiiii",
+			welcome_message = "hihihihihihih",
 			loading_text = "Loading, please wait ...",
 			question_sign = "",
 			answer_sign = "ﮧ",
@@ -50,6 +51,7 @@ require("chatgpt").setup(
 				toggle_settings = "<C-o>",
 				toggle_message_role = "<C-r>",
 				toggle_system_role_open = "<C-s>",
+				stop_generating = "<C-x>",
 			},
 		},
 		popup_layout = {
@@ -109,8 +111,9 @@ require("chatgpt").setup(
 			win_options = {
 				winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
 			},
-			submit = "<C-g>",
+			submit = "<C-Enter>",
 			submit_n = "<Enter>",
+			max_visible_lines = 20
 		},
 		settings_window = {
 			border = {
@@ -124,16 +127,19 @@ require("chatgpt").setup(
 			},
 		},
 		openai_params = {
-			model = "gpt-3.5-turbo",
+			model = "gpt-4",
 			frequency_penalty = 0,
 			presence_penalty = 0,
-			max_tokens = 300,
+			max_tokens = 4000,
 			temperature = 0,
 			top_p = 1,
 			n = 1,
 		},
 		openai_edit_params = {
-			model = "code-davinci-edit-001",
+			model = "gpt-4",
+			frequency_penalty = 0,
+			presence_penalty = 0,
+			max_tokens = 4000,
 			temperature = 0,
 			top_p = 1,
 			n = 1,

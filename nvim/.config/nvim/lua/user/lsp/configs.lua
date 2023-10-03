@@ -30,7 +30,7 @@ local servers = {
 	"gopls",
 	"cadence",
 	"move_analyzer",
-	"solidity_hardhat",
+	"solidity_ls_nomicfoundation"
 }
 
 lsp_installer.setup({
@@ -43,16 +43,6 @@ local custom_configs = {}
 --[[ for _, server in ipairs(custom_servers) do ]]
 --[[ 	table.insert(servers, server) ]]
 --[[ end ]]
-
-configs.solidity_hardhat = {
-	default_config = {
-		cmd = { 'nomicfoundation-solidity-language-server', '--stdio' },
-		filetypes = { 'solidity' },
-		root_dir = lspconfig.util.find_git_ancestor,
-		single_file_support = true,
-	}
-}
-
 
 for _, server in pairs(servers) do
 	local opts = {
