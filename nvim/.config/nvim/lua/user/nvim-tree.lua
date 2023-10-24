@@ -6,13 +6,6 @@ if not status_ok then
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
 local function on_attach(bufnr)
   local api = require("nvim-tree.api")
 
@@ -95,7 +88,7 @@ local function on_attach(bufnr)
   vim.keymap.del('n', 'E', { buffer = bufnr })
 end
 
-nvim_tree.setup {
+nvim_tree.setup({
   disable_netrw = true,
   hijack_netrw = true,
   open_on_tab = false,
@@ -180,4 +173,4 @@ nvim_tree.setup {
     }
   },
   on_attach = on_attach
-}
+})

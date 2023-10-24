@@ -27,7 +27,7 @@ local plugins = {
   { "windwp/nvim-autopairs" }, -- Autopairs, integrates with both cmp and treesitter
   { "numToStr/Comment.nvim" }, -- Easily comment stuff
   { "nvim-tree/nvim-web-devicons" },
-  { "nvim-tree/nvim-tree.lua" },
+  --[[ { "nvim-tree/nvim-tree.lua" }, ]]
   {
     "nvim-tree/nvim-tree.lua",
     version = "*",
@@ -45,7 +45,7 @@ local plugins = {
   { "voldikss/vim-floaterm" },
   { "ahmedkhalf/project.nvim" },
   --[[ {"lewis6991/impatient.nvim"}, ]]
-  { "lukas-reineke/indent-blankline.nvim" },
+  { "lukas-reineke/indent-blankline.nvim", main = 'ibl' },
   { "goolord/alpha-nvim" },
   --[[ { "antoinemadec/FixCursorHold.nvim" }, -- This is needed to fix lsp doc highlight ]]
   {
