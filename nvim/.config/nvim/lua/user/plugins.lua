@@ -80,6 +80,14 @@ local plugins = {
     end
   },
   --[[ { "LunarVim/Colorschemes" }, ]]
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {
+      restriction_mode = "hint",
+      disable_mouse = false
+    }
+  },
 
   { "rafamadriz/neon" },
 
@@ -180,16 +188,21 @@ local plugins = {
   { "tamago324/nlsp-settings.nvim" }, -- language server settings defined in json for
   --[[ { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters ]]
   {
+    "hinell/lsp-timeout.nvim",
+    dependencies = { "neovim/nvim-lspconfig" }
+  },
+  {
     "jay-babu/mason-null-ls.nvim",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "williamboman/mason.nvim",
-      "jose-elias-alvarez/null-ls.nvim",
+      "nvimtools/none-ls.nvim",
     },
     config = function()
       require("user.lsp.null-ls")
     end,
   },
+
   { "ray-x/lsp_signature.nvim" },
   { "yamatsum/nvim-cursorline", config = function() require("user.cursorline") end },
   {
