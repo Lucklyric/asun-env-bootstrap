@@ -85,7 +85,8 @@ local plugins = {
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     opts = {
       restriction_mode = "hint",
-      disable_mouse = false
+      disable_mouse = false,
+      enabled = false
     }
   },
 
