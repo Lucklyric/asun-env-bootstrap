@@ -1,9 +1,8 @@
-local null_ls_status_ok, null_ls = pcall(require, "none-ls")
-local diagnostic                 = require("vim.diagnostic")
+local null_ls_status_ok, null_ls = pcall(require, "null-ls")
+local diagnostic = require("vim.diagnostic")
 if not null_ls_status_ok then
 	return
 end
-
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
@@ -15,7 +14,7 @@ null_ls.setup({
 	sources = {
 		formatting.prettier.with({
 			extra_args = {},
-			extra_filetypes = { "solidity" }
+			extra_filetypes = { "solidity", "typescript" }
 		}),
 		formatting.yapf.with({ extra_args = { "--style", "google" } }),
 		diagnostics.cspell.with({

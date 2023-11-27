@@ -224,14 +224,27 @@ local plugins = {
   },
 
   -- indendt
-  { "Darazaki/indent-o-matic",                    config = function() require("user.indent-o-matic") end },
+  { "Darazaki/indent-o-matic",              config = function() require("user.indent-o-matic") end },
 
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
   },
   --[[ { 'nvim-treesitter/playground' }, ]]
-  { "JoosepAlviste/nvim-ts-context-commentstring" },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    dependencies = {
+      { "nvim-treesitter/nvim-treesitter" },
+      { "numToStr/Comment.nvim" }
+    },
+    config = function()
+      vim.g.skip_ts_context_commentstring_module = true
+      require("ts_context_commentstring").setup({
+        enable_autocmd = false
+      })
+      print("ts_context_commentstring loaded")
+    end,
+  },
 
   -- Git
   { "lewis6991/gitsigns.nvim" },
