@@ -190,7 +190,12 @@ local plugins = {
   --[[ { "jose-elias-alvarez/null-ls.nvim" }, -- for formatters and linters ]]
   {
     "hinell/lsp-timeout.nvim",
-    dependencies = { "neovim/nvim-lspconfig" }
+    dependencies = { "neovim/nvim-lspconfig" },
+    init = function()
+      vim.g.lspTimeoutConfig = {
+        stopTimeout = 1000 * 60 * 60, -- 1 hour
+      }
+    end
   },
   {
     "jay-babu/mason-null-ls.nvim",
