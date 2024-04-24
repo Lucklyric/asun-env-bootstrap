@@ -8,6 +8,7 @@ local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
 local code_actions = null_ls.builtins.code_actions
+local completion = null_ls.builtins.completion
 
 null_ls.setup({
 	debug = false,
@@ -17,13 +18,12 @@ null_ls.setup({
 			extra_filetypes = { "solidity", "typescript" }
 		}),
 		formatting.yapf.with({ extra_args = { "--style", "google" } }),
-		diagnostics.cspell.with({
+		completion.spell.with({
 			disabled_filetypes = { "NvimTree", "alpha" },
 			diagnostics_postprocess = function(diagnostics_)
 				diagnostics_.severity = vim.diagnostic.severity.WARN
 			end,
 		}),
-		code_actions.cspell.with({ disabled_filetypes = { "NvimTree", "alpha" } }),
 		-- formatting.black.with({ extra_args = { "--fast"} }),
 		-- formatting.stylua,
 		-- diagnostics.flake8
@@ -36,7 +36,7 @@ null_ls.setup({
 
 
 function toggle_cspell()
-	require("null-ls").toggle(diagnostics.cspell)
+	require("null-ls").toggle(completion.spell)
 end
 
 toggle_cspell()

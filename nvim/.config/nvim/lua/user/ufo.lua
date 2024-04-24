@@ -1,9 +1,9 @@
 require('ufo').setup({
     open_fold_hl_timeout = 150,
-    close_fold_kinds = {'imports', 'comment'},
+    close_fold_kinds_for_ft = { 'imports', 'comment' },
     preview = {
         win_config = {
-            border = {'', '─', '', '', '', '─', '', ''},
+            border = { '', '─', '', '', '', '─', '', '' },
             winhighlight = 'Normal:Folded',
             winblend = 0
         },
@@ -15,13 +15,13 @@ require('ufo').setup({
     provider_selector = function(bufnr, filetype, buftype)
         -- if you prefer treesitter provider rather than lsp,
         -- return ftMap[filetype] or {'treesitter', 'indent'}
-        return {'treesitter', 'indent'}
+        return { 'treesitter', 'indent' }
 
         -- refer to ./doc/example.lua for detail
     end
 })
 vim.o.foldcolumn = '0' -- '0' is not bad
-vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
