@@ -28,7 +28,7 @@ local servers = {
 	"taplo",
 	"rust_analyzer",
 	"gopls",
-	"cadence",
+	--[[ "cadence", ]]
 	"move_analyzer",
 	"solidity_ls_nomicfoundation"
 }
