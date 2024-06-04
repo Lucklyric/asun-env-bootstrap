@@ -108,19 +108,35 @@ local plugins = {
 
   -- aigc
   {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+    },
+    opts = {
+      debug = true, -- Enable debugging
+      -- See Configuration section for rest
+    },
+    config = function()
+      require("user.copilotchat")
+    end,
+    -- See Commands section for default commands if you want to lazy load on them
+  },
+
+  {
     "jackMort/ChatGPT.nvim",
     event = "VeryLazy",
     config = function()
-      require('user.chatgpt')
+      require("user.chatgpt")
     end,
     dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      "folke/which-key.nvim",
+      "folke/trouble.nvim",
+      "nvim-telescope/telescope.nvim"
     }
   },
-  --[[ { ]]
+
   --[[   "Bryley/neoai.nvim", ]]
   --[[   dependencies = { ]]
   --[[     "MunifTanjim/nui.nvim", ]]
