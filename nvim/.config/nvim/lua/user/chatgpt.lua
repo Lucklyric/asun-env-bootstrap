@@ -153,7 +153,7 @@ require("chatgpt").setup(
 -- which key integration
 local wk = require("which-key")
 wk.register({
-	c = { "<cmd>ChatGPT<CR>", "ChatGPT" },
+	c = { "<cmd>ChatGPT<CR>", "ChatGPT" , {
 	e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
 	g = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
 	t = { "<cmd>ChatGPTRun translate<CR>", "Translate", mode = { "n", "v" } },
@@ -166,6 +166,8 @@ wk.register({
 	x = { "<cmd>ChatGPTRun explain_code<CR>", "Explain Code", mode = { "n", "v" } },
 	r = { "<cmd>ChatGPTRun roxygen_edit<CR>", "Roxygen Edit", mode = { "n", "v" } },
 	l = { "<cmd>ChatGPTRun code_readability_analysis<CR>", "Code Readability Analysis", mode = { "n", "v" } },
+	},
+	}
 }, {
 	prefix = "<leader>",
 	mode = "v",
