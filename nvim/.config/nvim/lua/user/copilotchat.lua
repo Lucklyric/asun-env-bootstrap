@@ -123,3 +123,18 @@ chat.setup({
     },
   },
 })
+
+-- Keymaps
+local wk = require("which-key")
+--- cheat with current buffer
+wk.register({
+  ["<leader>cp"] = {
+    function()
+      local input = vim.fn.input("Quick Chat: ")
+      if input ~= "" then
+        chat.ask(input, { selection = require("CopilotChat.select").buffer })
+      end
+    end,
+    "Quick Chat with Buffer",
+  },
+})
