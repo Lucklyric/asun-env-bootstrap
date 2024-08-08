@@ -152,23 +152,23 @@ require("chatgpt").setup(
 
 -- which key integration
 local wk = require("which-key")
-wk.register({
-	C = { "<cmd>ChatGPT<CR>", "ChatGPT", {
-		e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
-		g = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
-		t = { "<cmd>ChatGPTRun translate<CR>", "Translate", mode = { "n", "v" } },
-		k = { "<cmd>ChatGPTRun keywords<CR>", "Keywords", mode = { "n", "v" } },
-		d = { "<cmd>ChatGPTRun docstring<CR>", "Docstring", mode = { "n", "v" } },
-		a = { "<cmd>ChatGPTRun add_tests<CR>", "Add Tests", mode = { "n", "v" } },
-		o = { "<cmd>ChatGPTRun optimize_code<CR>", "Optimize Code", mode = { "n", "v" } },
-		s = { "<cmd>ChatGPTRun summarize<CR>", "Summarize", mode = { "n", "v" } },
-		f = { "<cmd>ChatGPTRun fix_bugs<CR>", "Fix Bugs", mode = { "n", "v" } },
-		x = { "<cmd>ChatGPTRun explain_code<CR>", "Explain Code", mode = { "n", "v" } },
-		r = { "<cmd>ChatGPTRun roxygen_edit<CR>", "Roxygen Edit", mode = { "n", "v" } },
-		l = { "<cmd>ChatGPTRun code_readability_analysis<CR>", "Code Readability Analysis", mode = { "n", "v" } },
-	},
+wk.add(
+	{
+		{ "<leader>C", "<cmd>ChatGPT<CR>", desc = "ChatGPT", mode = "v" },
+		{
+			mode = { "n", "v" },
+			{ "<leader>Ca", "<cmd>ChatGPTRun add_tests<CR>",                 desc = "Add Tests" },
+			{ "<leader>Cd", "<cmd>ChatGPTRun docstring<CR>",                 desc = "Docstring" },
+			{ "<leader>Ce", "<cmd>ChatGPTEditWithInstruction<CR>",           desc = "Edit with instruction" },
+			{ "<leader>Cf", "<cmd>ChatGPTRun fix_bugs<CR>",                  desc = "Fix Bugs" },
+			{ "<leader>Cg", "<cmd>ChatGPTRun grammar_correction<CR>",        desc = "Grammar Correction" },
+			{ "<leader>Ck", "<cmd>ChatGPTRun keywords<CR>",                  desc = "Keywords" },
+			{ "<leader>Cl", "<cmd>ChatGPTRun code_readability_analysis<CR>", desc = "Code Readability Analysis" },
+			{ "<leader>Co", "<cmd>ChatGPTRun optimize_code<CR>",             desc = "Optimize Code" },
+			{ "<leader>Cr", "<cmd>ChatGPTRun roxygen_edit<CR>",              desc = "Roxygen Edit" },
+			{ "<leader>Cs", "<cmd>ChatGPTRun summarize<CR>",                 desc = "Summarize" },
+			{ "<leader>Ct", "<cmd>ChatGPTRun translate<CR>",                 desc = "Translate" },
+			{ "<leader>Cx", "<cmd>ChatGPTRun explain_code<CR>",              desc = "Explain Code" },
+		},
 	}
-}, {
-	prefix = "<leader>",
-	mode = "v",
-})
+)

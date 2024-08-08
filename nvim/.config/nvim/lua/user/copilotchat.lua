@@ -7,7 +7,7 @@ chat.setup({
   allow_insecure = false, -- Allow insecure server connections
 
   system_prompt = prompts.COPILOT_INSTRUCTIONS, -- System prompt to use
-  model = 'gpt-4', -- GPT model to use, 'gpt-3.5-turbo' or 'gpt-4'
+  model = 'gpt-4o', -- GPT model to use, 'gpt-3.5-turbo' or 'gpt-4'
   temperature = 0.1, -- GPT temperature
 
   question_header = '## User ', -- Header to use for user questions
@@ -127,14 +127,16 @@ chat.setup({
 -- Keymaps
 local wk = require("which-key")
 --- cheat with current buffer
-wk.register({
-  ["<leader>cp"] = {
+wk.add({
+  { "<leader>cp", group = "Copilot Chat" },
+  {
+    "<leader>cpb",
     function()
       local input = vim.fn.input("Quick Chat: ")
       if input ~= "" then
         chat.ask(input, { selection = require("CopilotChat.select").buffer })
       end
     end,
-    "Quick Chat with Buffer",
+    desc = "Quick Chat with Buffer",
   },
 })
