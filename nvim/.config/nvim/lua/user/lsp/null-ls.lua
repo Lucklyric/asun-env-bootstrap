@@ -15,7 +15,7 @@ null_ls.setup({
 	sources = {
 		formatting.prettier.with({
 			extra_args = {},
-			extra_filetypes = { "solidity", "typescript" }
+			extra_filetypes = { "solidity", "typescript", "tsx" }
 		}),
 		formatting.yapf.with({ extra_args = { "--style", "google" } }),
 		completion.spell.with({
@@ -23,7 +23,7 @@ null_ls.setup({
 			diagnostics_postprocess = function(diagnostics_)
 				diagnostics_.severity = vim.diagnostic.severity.WARN
 			end,
-		}),
+		})
 		-- formatting.black.with({ extra_args = { "--fast"} }),
 		-- formatting.stylua,
 		-- diagnostics.flake8

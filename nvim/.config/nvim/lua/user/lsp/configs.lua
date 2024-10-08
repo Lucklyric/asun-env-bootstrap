@@ -19,8 +19,7 @@ nlspsettings.setup({
 local servers = {
 	"jsonls",
 	"lua_ls",
-	"omnisharp_mono",
-	"tsserver",
+	"ts_ls",
 	--[[ "jedi_language_server", ]]
 	--[[ "pyright", ]]
 	"pylsp",

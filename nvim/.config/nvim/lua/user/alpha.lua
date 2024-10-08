@@ -5,12 +5,12 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
-  [[   __            _    _            _      ]],
-  [[  / / _   _  ___| | _| |_   _ _ __(_) ___ ]],
-  [[ / / | | | |/ __| |/ / | | | | '__| |/ __|]],
-  [[/ /__| |_| | (__|   <| | |_| | |  | | (__ ]],
-  [[\____/\__,_|\___|_|\_\_|\__, |_|  |_|\___|]],
-  [[                        |___/             ]],
+	[[   __            _    _            _      ]],
+	[[  / / _   _  ___| | _| |_   _ _ __(_) ___ ]],
+	[[ / / | | | |/ __| |/ / | | | | '__| |/ __|]],
+	[[/ /__| |_| | (__|   <| | |_| | |  | | (__ ]],
+	[[\____/\__,_|\___|_|\_\_|\__, |_|  |_|\___|]],
+	[[                        |___/             ]],
 }
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
@@ -23,7 +23,7 @@ dashboard.section.buttons.val = {
 }
 
 local function footer()
--- NOTE: requires the fortune-mod package to work
+	-- NOTE: requires the fortune-mod package to work
 	-- local handle = io.popen("fortune")
 	-- local fortune = handle:read("*a")
 	-- handle:close()
