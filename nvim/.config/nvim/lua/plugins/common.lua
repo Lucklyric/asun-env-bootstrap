@@ -260,6 +260,45 @@ return {
 
 	--------- editor ----------
 	{
+		"kevinhwang91/nvim-ufo",
+		dependencies = {
+			"kevinhwang91/promise-async",
+		},
+		keys = {
+			{ "zR", "<cmd>lua require('ufo').openAllFolds()<CR>", desc = "Open All Folds" },
+			{ "zM", "<cmd>lua require('ufo').closeFoldsWith(0)<CR>", desc = "Close All Folds" },
+		},
+		opts = {
+			open_fold_hl_timeout = 150,
+			--[[ close_fold_kinds_for_ft = { 'imports', 'comment' }, ]]
+			preview = {
+				win_config = {
+					border = { "", "─", "", "", "", "─", "", "" },
+					winhighlight = "Normal:Folded",
+					winblend = 0,
+				},
+				mappings = {
+					scrollU = "<C-u>",
+					scrollD = "<C-d>",
+				},
+			},
+			provider_selector = function(bufnr, filetype, buftype)
+				-- if you prefer treesitter provider rather than lsp,
+				-- return ftMap[filetype] or {'treesitter', 'indent'}
+				return { "treesitter", "indent" }
+
+				-- refer to ./doc/example.lua for detail
+			end,
+		},
+		config = function(_, opts)
+			require("ufo").setup(opts)
+			vim.o.foldcolumn = "0" -- '0' is not bad
+			vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+			vim.o.foldlevelstart = 99
+			vim.o.foldenable = true
+		end,
+	},
+	{
 		"voldikss/vim-floaterm",
 		keys = {
 			{ "<s-t>t", "<cmd>FloatermToggle<CR>", desc = "Toggle Terminal" },
