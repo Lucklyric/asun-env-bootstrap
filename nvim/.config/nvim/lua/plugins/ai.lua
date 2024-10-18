@@ -115,6 +115,7 @@ return {
 				},
 				ft = { "markdown", "Avante" },
 			},
+			{ "mzlogin/vim-markdown-toc" },
 		},
 	},
 	{
