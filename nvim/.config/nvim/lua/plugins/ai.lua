@@ -6,6 +6,14 @@ return {
 		lazy = false,
 		version = false, -- set this if you want to always pull the latest change
 		opts = {
+			dual_boost = {
+				enabled = true,
+				first_provider = "openai",
+				second_provider = "claude",
+				prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: {{provider1_output}}, Reference Output 2: {{provider2_output}}",
+				timeout = 60000, -- Timeout in milliseconds
+			},
+			debug = false,
 			---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
 			provider = "openai", -- Recommend using Claude
 			auto_suggestions_provider = "openai", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
@@ -14,8 +22,7 @@ return {
 				model = "gpt-4o",
 				timeout = 30000, -- Timeout in milliseconds
 				temperature = 0,
-				max_tokens = 4096,
-				["local"] = false,
+				max_tokens = 8000,
 			},
 			behaviour = {
 				auto_suggestions = false, -- Experimental stage
