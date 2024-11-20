@@ -2,7 +2,7 @@ return {
 	{ "github/copilot.vim" },
 	{
 		"olimorris/codecompanion.nvim",
-		enabled = false,
+		enabled = true,
 		dependencies = {
 			{ "echasnovski/mini.nvim", version = "*" },
 			"nvim-lua/plenary.nvim",
