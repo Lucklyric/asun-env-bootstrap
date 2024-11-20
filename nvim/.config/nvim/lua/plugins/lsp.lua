@@ -167,6 +167,15 @@ return {
 				gopls = {},
 				--[[ "cadence", ]]
 				solidity_ls_nomicfoundation = {},
+				move_analyzer = {
+					opts = {
+						cmd = { "move-analyzer" }, -- Update the path accordingly
+						filetypes = { "move" },
+					},
+					on_attach = function(client, bufnr)
+						vim.notify("Move language server attached!")
+					end,
+				},
 			}
 			return ret
 		end,
