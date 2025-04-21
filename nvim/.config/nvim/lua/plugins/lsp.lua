@@ -161,6 +161,8 @@ return {
 				ts_ls = {},
 				--[[ "jedi_language_server", ]]
 				--[[ "pyright", ]]
+				pyright = {},
+				ruff = {},
 				pylsp = {},
 				taplo = {},
 				rust_analyzer = {},

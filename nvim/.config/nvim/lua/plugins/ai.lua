@@ -48,7 +48,7 @@ return {
 		version = false, -- set this if you want to always pull the latest change
 		opts = {
 			dual_boost = {
-				enabled = true,
+				enabled = false,
 				first_provider = "openai",
 				second_provider = "claude",
 				prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: {{provider1_output}}, Reference Output 2: {{provider2_output}}",
@@ -60,8 +60,15 @@ return {
 			auto_suggestions_provider = "openai", -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
 			openai = {
 				endpoint = "https://api.openai.com/v1",
-				model = "gpt-4o",
+				model = "o3-mini",
+				reasoning_effort = "high",
 				timeout = 30000, -- Timeout in milliseconds
+				max_tokens = 16000,
+			},
+			claude = {
+				endpoint = "https://api.anthropic.com",
+				model = "claude-3-7-sonnet-20250219",
+				temperature = 0,
 				max_tokens = 16000,
 			},
 			behaviour = {
@@ -167,7 +174,7 @@ return {
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",
-		branch = "canary",
+		branch = "main",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
 		},
